@@ -3,6 +3,7 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import CategoriesGroup from './components/CategoriesGroup';
 import HotCategories from './components/HotCategories';
+import {ScrollView} from 'react-native';
 
 const data = [
   {
@@ -22,7 +23,7 @@ const data = [
   },
   {
     image:
-      'https://discoverasia.com.au/wp-content/uploads/2019/02/Hot-air-balloon-over-Nam-Song-river-at-sunset-in-Vang-vieng-Laos-Discover-Laos-Discover-Asia.jpg',
+      'https://sundayinwonderland.com/wp-content/uploads/2019/01/Explore_the_unexplored_01.jpg',
     title: 'Ẩm thực',
   },
   {
@@ -49,10 +50,12 @@ const data = [
 
 const DiscoverScreens = () => {
   return (
-    <Block>
+    <Block flex>
       <Header title={'Khám phá'} />
       <CategoriesGroup data={data} />
-      <HotCategories data={[1, 2, 3, 4, 5]} />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <HotCategories />
+      </ScrollView>
     </Block>
   );
 };
