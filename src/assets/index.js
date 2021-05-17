@@ -4,4 +4,7 @@ export const icons = {
   profile: require('./icons/profile.png'),
   star: require('./icons/star.png'),
   tendency: require('./icons/tendency.png'),
+  logoims: require('./icons/logoims.png'),
+  back: require('./icons/back.png'),
+  search: require('./icons/iconsearch.png'),
 };
