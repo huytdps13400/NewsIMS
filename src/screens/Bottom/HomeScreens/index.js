@@ -1,11 +1,11 @@
-import {Block, Text} from '@components';
+import {Block, Header, Text} from '@components';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 
 const HomeScreens = () => {
   return (
     <Block>
-      <Text>HomeScreens</Text>
+      <Header type="Home" />
     </Block>
   );
 };

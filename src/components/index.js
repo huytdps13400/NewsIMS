@@ -1,4 +1,4 @@
 import Block from '@components/Block';
 import Text from '@components/Text';
-
-export {Block, Text};
+import Header from '@components/Header';
+export {Block, Text, Header};
