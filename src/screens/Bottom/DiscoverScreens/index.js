@@ -1,4 +1,4 @@
-import {Block, Text} from '@components';
+import {Block, Text, Header} from '@components';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import CategoriesGroup from './components/CategoriesGroup';
@@ -50,6 +50,7 @@ const data = [
 const DiscoverScreens = () => {
   return (
     <Block>
+      <Header title={'Khám phá'} />
       <CategoriesGroup data={data} />
       <HotCategories data={[1, 2, 3, 4, 5]} />
     </Block>

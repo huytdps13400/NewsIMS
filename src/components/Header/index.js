@@ -65,7 +65,7 @@ const HeaderCommon = ({title, cangoBack}) => {
         )}
 
         {title && (
-          <Text flex center fontType="semibold" color="white">
+          <Text flex center size={17} fontType="semibold" color="white">
             {title}
           </Text>
         )}
