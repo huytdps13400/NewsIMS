@@ -5,3 +5,6 @@ export const icons = {
   star: require('./icons/star.png'),
   tendency: require('./icons/tendency.png'),
 };
+export const images = {
+  discover: require('./images/discover.png'),
+};
