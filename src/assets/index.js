@@ -7,6 +7,18 @@ export const icons = {
   logoims: require('./icons/logoims.png'),
   back: require('./icons/back.png'),
   search: require('./icons/iconsearch.png'),
+  avatar: require('./icons/icon-avatar.png'),
+  camera: require('./icons/icon-camera.png'),
+  next: require('./icons/icon-next.png'),
+  new: require('./icons/icon-new.png'),
+  seen: require('./icons/icon-seen.png'),
+  notification2: require('./icons/icon-notification.png'),
+  next_right: require('./icons/next-right.png'),
+  profile1: require('./icons/profile1.png'),
+  profile2: require('./icons/profile2.png'),
+  profile3: require('./icons/profile3.png'),
+  profile4: require('./icons/profile4.png'),
+  profile5: require('./icons/profile5.png'),
 };
 export const images = {
   discover: require('./images/discover.png'),
