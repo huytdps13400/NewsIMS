@@ -4,4 +4,18 @@ import Header from '@components/Header';
 import Slider from '@components/Slider';
 import Button from '@components/Button';
 import WebView from '@components/WebView';
-export {Block, Text, Header, Slider, Button, WebView};
+import FormInput from '@components/Form/FormInput';
+import TextInput from '@components/TextInput';
+import CheckBox from '@components/CheckBox';
+
+export {
+  Block,
+  Text,
+  Header,
+  Slider,
+  Button,
+  WebView,
+  FormInput,
+  TextInput,
+  CheckBox,
+};

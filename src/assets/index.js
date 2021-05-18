@@ -31,6 +31,14 @@ export const icons = {
   profile8: require('./icons/profile8.png'),
   profile9: require('./icons/profile9.png'),
   profile10: require('./icons/profile10.png'),
+  logoAuth: require('./icons/logoAuth.png'),
+  auth_user: require('./icons/auth_user.png'),
+  auth_password: require('./icons/auth_password.png'),
+  check_box: require('./icons/check_box.png'),
+  google: require('./icons/google.png'),
+  apple: require('./icons/apple.png'),
+  facebook: require('./icons/facebook.png'),
+  auth_email: require('./icons/auth_email.png'),
 };
 export const images = {
   discover: require('./images/discover.png'),
