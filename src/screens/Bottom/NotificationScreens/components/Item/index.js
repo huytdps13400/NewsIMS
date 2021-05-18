@@ -1,9 +1,7 @@
-import {Block, Text, Header} from '@components';
+import {Block, Text} from '@components';
+import {getSize} from '@utils/responsive';
 import React, {useState} from 'react';
-import {Pressable, Image, FlatList} from 'react-native';
-import {icons} from '@assets';
-import {theme} from '@theme';
-import {getSize, width, height} from '@utils/responsive';
+import {FlatList, Image, Pressable} from 'react-native';
 
 const ItemNotification = ({item, onPress, backgroundColor}) => (
   <Pressable onPress={onPress}>
