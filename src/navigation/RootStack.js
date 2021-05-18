@@ -35,6 +35,10 @@ const RootStack = () => {
         />
         <Stack.Screen name={routes.SYSTEMNEWS} component={bottom.SYSTEMNEWS} />
         <Stack.Screen
+          name={routes.NEWSDETAILS}
+          component={bottom.NEWSDETAILS}
+        />
+        <Stack.Screen
           name={routes.LOGINSCREERN}
           component={auth.LOGINSCREERN}
         />

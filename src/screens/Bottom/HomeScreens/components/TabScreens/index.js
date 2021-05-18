@@ -1,9 +1,9 @@
 import {images} from '@assets';
-import {Block, Text, Slider} from '@components';
+import {Block, Slider} from '@components';
 import {theme} from '@theme';
 import {getSize, width} from '@utils/responsive';
 import React from 'react';
-import {StyleSheet, Image, ScrollView} from 'react-native';
+import {Image, ScrollView} from 'react-native';
 import HighLight from './components/HighLight';
 import Offer from './components/Offer';
 
@@ -125,5 +125,3 @@ const TabScreens = () => {
 };
 
 export default TabScreens;
-
-const styles = StyleSheet.create({});

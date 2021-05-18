@@ -1,7 +1,7 @@
-import {Block, Header, Text} from '@components';
+import {Block, Header} from '@components';
 import {theme} from '@theme';
 import React from 'react';
-import {StyleSheet, ScrollView} from 'react-native';
+import {ScrollView} from 'react-native';
 import Tendency from './components/Tendency';
 const TendencyScreens = () => {
   return (
@@ -32,5 +32,3 @@ const TendencyScreens = () => {
 };
 
 export default TendencyScreens;
-
-const styles = StyleSheet.create({});

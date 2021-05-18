@@ -1,9 +1,8 @@
-import {Block, Header, Text} from '@components';
-import React from 'react';
-import {StyleSheet} from 'react-native';
+import {Block, Header} from '@components';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import TopTabBar from './components/TabScreens/CustomTabbar';
+import React from 'react';
 import TabScreens from './components/TabScreens';
+import TopTabBar from './components/TabScreens/CustomTabbar';
 const Tab = createMaterialTopTabNavigator();
 const HomeScreens = () => {
   const DATATAB = [
@@ -47,5 +46,3 @@ const HomeScreens = () => {
 };
 
 export default HomeScreens;
-
-const styles = StyleSheet.create({});
