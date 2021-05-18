@@ -8,6 +8,7 @@ import AllNewsScreen from './HomeScreens/navigation/AllNewsScreen';
 import SystemNews from './ProfileScreens/navigation/SystemNews';
 import PopularNews from './ProfileScreens/navigation/PopularNews';
 import SeenNews from './ProfileScreens/navigation/SeenNews';
+import NotificationDetails from './NotificationScreens/navigation/NotificationDetails';
 
 export const bottom = {
   HOMESCREENS: HomeScreens,
@@ -20,4 +21,5 @@ export const bottom = {
   SYSTEMNEWS: SystemNews,
   POPULARNEWS: PopularNews,
   SEENNEWS: SeenNews,
+  NOTIFICATIONDETAILS: NotificationDetails,
 };

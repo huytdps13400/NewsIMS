@@ -6,6 +6,7 @@ import ButtonUtility from './components/ButtonUtility';
 import HeaderProfile from './components/HeaderProfile';
 import {routes} from '@navigation/routes';
 import {useNavigation} from '@react-navigation/native';
+import styles from './styles';
 const ProfileScreens = () => {
   const navigation = useNavigation();
   return (
@@ -22,7 +23,7 @@ const ProfileScreens = () => {
         radius={5}
         backgroundColor="white"
         space={'between'}
-        style={{position: 'absolute', top: 160, alignSelf: 'center'}}>
+        style={styles.container}>
         <ButtonProfile
           image={icons.new}
           title={'Tin hệ thống'}

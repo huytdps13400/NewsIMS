@@ -14,17 +14,18 @@ const WEBView = ({data, style, scrollEnabled = true}) => {
         scalesPageToFit={false}
         useWebKit={true}
         originWhitelist={['*']}
-        source={{
-          html: `
-          <html>
-          <head>
-            ${getHtmlStyles()}
-          </head>
-          <body> 
-              ${data}
-          </body>
-          </html>`,
-        }}
+        // source={{
+        //   html: `
+        //   <html>
+        //   <head>
+        //     ${getHtmlStyles()}
+        //   </head>
+        //   <body>
+        //       ${data}
+        //   </body>
+        //   </html>`,
+        // }}
+        source={{uri: data}}
         injectedJavaScript="window.ReactNativeWebView.postMessage(document.body.scrollHeight)"
       />
     </Block>

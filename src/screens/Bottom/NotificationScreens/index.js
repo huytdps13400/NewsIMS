@@ -5,6 +5,8 @@ import {icons} from '@assets';
 import {theme} from '@theme';
 import HeaderNotification from './components/HeaderNotification';
 import Item from './components/Item';
+import {routes} from '@navigation/routes';
+import {useNavigation} from '@react-navigation/native';
 const data = [
   {
     id: '1',
@@ -70,12 +72,16 @@ const data = [
   },
 ];
 const NotificationScreens = () => {
+  const navigation = useNavigation();
   return (
     <Block flex>
       <Header title={'Thông báo'} />
       <HeaderNotification />
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Item data={data} />
+        <Item
+          data={data}
+          onPress={() => navigation.navigate(routes.NOTIFICATIONDETAILS)}
+        />
       </ScrollView>
     </Block>
   );
