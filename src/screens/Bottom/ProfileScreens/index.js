@@ -4,7 +4,10 @@ import React from 'react';
 import ButtonProfile from './components/ButtonProfile';
 import ButtonUtility from './components/ButtonUtility';
 import HeaderProfile from './components/HeaderProfile';
+import {routes} from '@navigation/routes';
+import {useNavigation} from '@react-navigation/native';
 const ProfileScreens = () => {
+  const navigation = useNavigation();
   return (
     <Block flex backgroundColor={'#fff'}>
       <Header />
@@ -21,8 +24,16 @@ const ProfileScreens = () => {
         space={'between'}
         style={{position: 'absolute', top: 160, alignSelf: 'center'}}>
         <ButtonProfile image={icons.new} title={'Tin hệ thống'} />
-        <ButtonProfile image={icons.notification2} title={'Tin đọc nhiều'} />
-        <ButtonProfile image={icons.seen} title={'Tin đã xem'} />
+        <ButtonProfile
+          image={icons.notification2}
+          title={'Tin đọc nhiều'}
+          onPress={() => navigation.navigate(routes.POPULARNEWS)}
+        />
+        <ButtonProfile
+          image={icons.seen}
+          title={'Tin đã xem'}
+          onPress={() => navigation.navigate(routes.SEENRNEWS)}
+        />
       </Block>
       <Block paddingHorizontal={20} marginTop={70}>
         <ButtonUtility icon={icons.profile1} title={'Bật thông báo'} check />
