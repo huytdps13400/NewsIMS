@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {Image, Switch} from 'react-native';
+import {Image, Switch, Platform} from 'react-native';
 import {Block, Text} from '@components';
-// import {Switch} from 'react-native-paper';
 import {icons} from '@assets';
 
 const ButtonUtility = ({icon, title, check}) => {
@@ -19,9 +18,15 @@ const ButtonUtility = ({icon, title, check}) => {
         <Switch
           trackColor={{false: '#0088EE', true: '#81b0ff'}}
           thumbColor={isEnabled ? '#f4f3f4' : '#f4f3f4'}
-          ios_backgroundColor="#3e3e3e"
+          ios_backgroundColor="#0088EE"
           onValueChange={toggleSwitch}
           value={isEnabled}
+          style={{
+            transform:
+              Platform.OS === 'ios'
+                ? [{scaleX: 0.8}, {scaleY: 0.8}]
+                : [{scaleX: 1}, {scaleY: 1}],
+          }}
         />
       ) : (
         <Image source={icons.next_right} style={{width: 10, height: 10}} />
