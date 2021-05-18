@@ -19,8 +19,7 @@ const ProfileScreens = () => {
         padding={20}
         radius={5}
         space={'between'}
-        style={{position: 'absolute', top: 160, alignSelf: 'center'}}
-        backgroundColor={'#fff'}>
+        style={{position: 'absolute', top: 160, alignSelf: 'center'}}>
         <ButtonProfile image={icons.new} title={'Tin hệ thống'} />
         <ButtonProfile image={icons.notification2} title={'Tin đọc nhiều'} />
         <ButtonProfile image={icons.seen} title={'Tin đã xem'} />

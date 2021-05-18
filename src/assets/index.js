@@ -19,7 +19,10 @@ export const icons = {
   profile3: require('./icons/profile3.png'),
   profile4: require('./icons/profile4.png'),
   profile5: require('./icons/profile5.png'),
+  rightarrow: require('./icons/right-arrow.png'),
+  buttonplay: require('./icons/buttonplay.png'),
 };
 export const images = {
   discover: require('./images/discover.png'),
+  bannerhome: require('./images/bannerhome.png'),
 };
