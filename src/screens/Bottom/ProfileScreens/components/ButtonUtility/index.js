@@ -8,7 +8,13 @@ const ButtonUtility = ({icon, title, check}) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
-    <Block paddingVertical={15} row justifyCenter space={'between'}>
+    <Block
+      borderBottomWidth={1}
+      borderColor={'#E4E4E4'}
+      paddingVertical={15}
+      row
+      justifyCenter
+      space={'between'}>
       <Block row>
         <Image source={icon} style={{width: 20, height: 20}} />
         <Text marginLeft={10} size={15} fontType={'medium'}>

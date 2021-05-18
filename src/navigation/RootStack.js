@@ -4,7 +4,10 @@ import React from 'react';
 import {StatusBar} from 'react-native';
 import BottomTabNavigation from './BottomTabNavigation';
 import {navigate} from './RootNavigation';
+import {bottom} from '../screens/Bottom';
+import {auth} from '../screens/Auth';
 import {routes} from './routes';
+
 const Stack = createStackNavigator();
 const RootStack = () => {
   return (
@@ -21,6 +24,18 @@ const RootStack = () => {
         <Stack.Screen
           name={routes.BOTTOMTABBAR}
           component={BottomTabNavigation}
+        />
+        <Stack.Screen
+          name={routes.PROFILEDETAILS}
+          component={bottom.PROFILEDETAILS}
+        />
+        <Stack.Screen
+          name={routes.LOGINSCREERN}
+          component={auth.LOGINSCREERN}
+        />
+        <Stack.Screen
+          name={routes.SIGNUPSCREEN}
+          component={auth.SIGNUPSCREEN}
         />
       </Stack.Navigator>
     </NavigationContainer>

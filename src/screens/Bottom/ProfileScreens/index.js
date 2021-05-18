@@ -8,9 +8,8 @@ const ProfileScreens = () => {
   return (
     <Block flex backgroundColor={'#fff'}>
       <Header />
-      <HeaderProfile />
+      <HeaderProfile next />
       <Block
-        backgroundColor={'#fff'}
         shadow
         row
         flex
