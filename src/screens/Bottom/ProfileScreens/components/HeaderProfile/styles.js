@@ -20,9 +20,9 @@ export default StyleSheet.create({
     height: getSize.s(26),
   },
   header: {
-    width: width,
+    // width: width,
     borderBottomLeftRadius: getSize.m(60),
     borderBottomRightRadius: getSize.m(60),
-    transform: [{scaleX: 1.1}],
+    // transform: [{scaleX: 1.1}],
   },
 });
