@@ -6,6 +6,9 @@ import ProfileScreens from './ProfileScreens';
 import ProfileDetails from './ProfileScreens/navigation/ProfileDetails';
 import AllNewsScreen from './HomeScreens/navigation/AllNewsScreen';
 import SystemNews from './ProfileScreens/navigation/SystemNews';
+import PopularNews from './ProfileScreens/navigation/PopularNews';
+import SeenNews from './ProfileScreens/navigation/SeenNews';
+
 export const bottom = {
   HOMESCREENS: HomeScreens,
   TENDENCYSCREENS: TendencyScreens,
@@ -15,4 +18,6 @@ export const bottom = {
   PROFILEDETAILS: ProfileDetails,
   ALLNEWSSCREEN: AllNewsScreen,
   SYSTEMNEWS: SystemNews,
+  POPULARNEWS: PopularNews,
+  SEENNEWS: SeenNews,
 };

@@ -42,6 +42,11 @@ const RootStack = () => {
           name={routes.SIGNUPSCREEN}
           component={auth.SIGNUPSCREEN}
         />
+        <Stack.Screen
+          name={routes.POPULARNEWS}
+          component={bottom.POPULARNEWS}
+        />
+        <Stack.Screen name={routes.SEENRNEWS} component={bottom.SEENNEWS} />
       </Stack.Navigator>
     </NavigationContainer>
   );
