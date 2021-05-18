@@ -4,7 +4,8 @@ import DiscoverScreens from './DiscoverScreens';
 import NotificationScreens from './NotificationScreens';
 import ProfileScreens from './ProfileScreens';
 import ProfileDetails from './ProfileScreens/navigation/ProfileDetails';
-
+import AllNewsScreen from './HomeScreens/navigation/AllNewsScreen';
+import SystemNews from './ProfileScreens/navigation/SystemNews';
 export const bottom = {
   HOMESCREENS: HomeScreens,
   TENDENCYSCREENS: TendencyScreens,
@@ -12,4 +13,6 @@ export const bottom = {
   NOTIFICATIONSCREENS: NotificationScreens,
   PROFILESCREENS: ProfileScreens,
   PROFILEDETAILS: ProfileDetails,
+  ALLNEWSSCREEN: AllNewsScreen,
+  SYSTEMNEWS: SystemNews,
 };

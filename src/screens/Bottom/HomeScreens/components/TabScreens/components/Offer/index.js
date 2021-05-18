@@ -1,26 +1,31 @@
 import {Block, Text} from '@components';
 import React from 'react';
-import {Image, FlatList} from 'react-native';
+import {Image, FlatList, Pressable} from 'react-native';
 import ItemVideo from '@components/Common/ItemVideo';
 import {getSize, width} from '@utils/responsive';
 import {icons} from '@assets';
 import ItemNews from '@components/Common/itemNews';
 import styles from './styles';
 import {theme} from '@theme';
+import {useNavigation} from '@react-navigation/core';
+import {routes} from '@navigation/routes';
 
 const Offer = ({title, titlevideo, describe, onebox, threebox, list}) => {
   const _renderItem = ({item}) => {
     return <ItemNews />;
   };
+  const navigation = useNavigation();
   return (
     <Block marginTop={getSize.m(28)}>
       <Block paddingHorizontal={getSize.m(12)}>
         <Block row alignCenter space="between">
           <Text size={getSize.s(20)}>{title}</Text>
-          <Block row alignCenter>
-            <Text color={'#2B80EF'}>Xem tất cả </Text>
-            <Image source={icons.rightarrow} style={styles.icon} />
-          </Block>
+          <Pressable onPress={() => navigation.navigate(routes.ALLNEWSSCREEN)}>
+            <Block row alignCenter>
+              <Text color={'#2B80EF'}>Xem tất cả </Text>
+              <Image source={icons.rightarrow} style={styles.icon} />
+            </Block>
+          </Pressable>
         </Block>
         <ItemVideo
           style={{marginTop: getSize.m(20)}}
