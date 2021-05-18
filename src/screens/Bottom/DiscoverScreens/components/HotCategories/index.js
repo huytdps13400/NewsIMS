@@ -37,7 +37,7 @@ const HotCategories = () => {
         <FlatList
           renderItem={_renderItem}
           data={[1, 2, 3, 4, 5, 6, 7, 8]}
-          keyExtractor={item => item.item_id}
+          keyExtractor={(item, index) => index}
         />
       </Block>
     </Block>

@@ -11,7 +11,7 @@ const ButtonInfo = ({title, icon}) => {
       borderColor={'#E4E4E4'}
       row
       marginTop={40}>
-      <Image resizeMode={'contain'} style={styles.image} source={icon} />
+      <Image resizeMode="contain" style={styles.image} source={icon} />
       <Text size={15} marginLeft={15}>
         {title}
       </Text>

@@ -15,7 +15,10 @@ const ButtonUtility = ({icon, title, check}) => {
       justifyCenter
       space={'between'}>
       <Block row>
-        <Image source={icon} style={{width: 20, height: 20}} />
+        <Image
+          source={icon}
+          style={{width: 20, height: 20, resizeMode: 'contain'}}
+        />
         <Text marginLeft={10} size={15} fontType={'medium'}>
           {title}
         </Text>
@@ -35,7 +38,10 @@ const ButtonUtility = ({icon, title, check}) => {
           }}
         />
       ) : (
-        <Image source={icons.next_right} style={{width: 10, height: 10}} />
+        <Image
+          source={icons.next_right}
+          style={{width: 10, height: 10, resizeMode: 'contain'}}
+        />
       )}
     </Block>
   );

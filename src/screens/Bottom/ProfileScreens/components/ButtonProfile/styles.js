@@ -5,5 +5,6 @@ export default StyleSheet.create({
   image: {
     width: getSize.s(28),
     height: getSize.s(28),
+    resizeMode: 'contain',
   },
 });
