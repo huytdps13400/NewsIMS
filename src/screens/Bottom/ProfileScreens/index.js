@@ -8,9 +8,8 @@ const ProfileScreens = () => {
   return (
     <Block flex backgroundColor={'#fff'}>
       <Header />
-      <HeaderProfile />
+      <HeaderProfile next />
       <Block
-        backgroundColor={'#fff'}
         shadow
         row
         flex
@@ -18,6 +17,7 @@ const ProfileScreens = () => {
         justifyCenter
         padding={20}
         radius={5}
+        backgroundColor="white"
         space={'between'}
         style={{position: 'absolute', top: 160, alignSelf: 'center'}}>
         <ButtonProfile image={icons.new} title={'Tin hệ thống'} />

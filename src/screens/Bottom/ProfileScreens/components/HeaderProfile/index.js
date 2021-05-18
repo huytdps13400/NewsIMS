@@ -1,10 +1,13 @@
 import React from 'react';
-import {Image} from 'react-native';
+import {Image, Pressable} from 'react-native';
 import {Block, Text} from '@components';
 import {getSize} from '@utils/responsive';
 import {icons, images} from '@assets';
 import styles from './styles';
-const HeaderProfile = () => {
+import {routes} from '@navigation/routes';
+import {useNavigation} from '@react-navigation/native';
+const HeaderProfile = ({next}) => {
+  const navigation = useNavigation();
   return (
     <Block
       alignCenter
@@ -29,7 +32,11 @@ const HeaderProfile = () => {
           </Text>
         </Block>
       </Block>
-      <Image style={styles.imgNext} source={icons.next}></Image>
+      {next ? (
+        <Pressable onPress={() => navigation.navigate(routes.PROFILEDETAILS)}>
+          <Image style={styles.imgNext} source={icons.next}></Image>
+        </Pressable>
+      ) : null}
     </Block>
   );
 };
