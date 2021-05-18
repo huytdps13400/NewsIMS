@@ -1,5 +1,5 @@
 import {icons} from '@assets';
-import {Block, Header, Button} from '@components';
+import {Block, Button, Header} from '@components';
 import React from 'react';
 import ButtonProfile from './components/ButtonProfile';
 import ButtonUtility from './components/ButtonUtility';
