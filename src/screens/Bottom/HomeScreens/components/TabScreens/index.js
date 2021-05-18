@@ -83,6 +83,8 @@ const TabScreens = () => {
           threebox
           list
         />
+        <Block height={5} backgroundColor={theme.colors.smoke} marginTop={20} />
+
         <Offer
           title="Nhịp sống"
           titlevideo="Phim Thái bị phản ứng vì bình thường hóa việc hiếp dâm"
@@ -98,6 +100,7 @@ const TabScreens = () => {
           threebox
           list
         />
+        <Block height={5} backgroundColor={theme.colors.smoke} marginTop={20} />
         <Offer
           title="Giới trẻ"
           titlevideo="Trấn Thành, Hari Won và dàn sao rạng rỡ trên thảm đỏ"
@@ -106,6 +109,8 @@ const TabScreens = () => {
           threebox
           list
         />
+        <Block height={5} backgroundColor={theme.colors.smoke} marginTop={20} />
+
         <Offer
           title="Đời sống"
           titlevideo="Trấn Thành, Hari Won và dàn sao rạng rỡ trên thảm đỏ"
