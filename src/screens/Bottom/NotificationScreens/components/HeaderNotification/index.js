@@ -3,6 +3,7 @@ import React from 'react';
 import {Pressable, Image} from 'react-native';
 import {icons} from '@assets';
 import {theme} from '@theme';
+import styles from './styles';
 
 const HeaderNotification = () => {
   return (
@@ -18,25 +19,21 @@ const HeaderNotification = () => {
           <Image
             resizeMode={'contain'}
             source={icons.square}
-            style={{width: 18, height: 18}}
+            style={styles.image1}
           />
         </Pressable>
         <Pressable>
           <Image
             resizeMode="contain"
             source={icons.down}
-            style={{
-              width: 8,
-              height: 8,
-              marginLeft: 10,
-            }}
+            style={styles.image2}
           />
         </Pressable>
         <Pressable>
           <Image
             resizeMode={'contain'}
             source={icons.refresh}
-            style={{width: 18, height: 18, marginLeft: 10}}
+            style={styles.image3}
           />
         </Pressable>
         <Text marginLeft={17} size={14} color={'#2374DF'} fontType={'semibold'}>
@@ -56,7 +53,7 @@ const HeaderNotification = () => {
           <Image
             resizeMode={'contain'}
             source={icons.dot}
-            style={{width: 10, height: 10, alignSelf: 'center'}}
+            style={styles.imgItem}
           />
         </Block>
       </Pressable>

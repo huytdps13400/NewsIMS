@@ -50,6 +50,10 @@ const RootStack = () => {
           name={routes.POPULARNEWS}
           component={bottom.POPULARNEWS}
         />
+        <Stack.Screen
+          name={routes.NOTIFICATIONDETAILS}
+          component={bottom.NOTIFICATIONDETAILS}
+        />
         <Stack.Screen name={routes.SEENRNEWS} component={bottom.SEENNEWS} />
       </Stack.Navigator>
     </NavigationContainer>

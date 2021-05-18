@@ -3,12 +3,7 @@ import React from 'react';
 import {FlatList} from 'react-native';
 const HotCategories = () => {
   const _renderItem = () => (
-    <Block
-      radius={12}
-      paddingHorizontal={20}
-      paddingVertical={20}
-      marginBottom={20}
-      backgroundColor={'white'}>
+    <Block radius={12} padding={20} marginBottom={20} backgroundColor={'white'}>
       <Text size={13} fontType={'semibold'} color={'#E95320'}>
         BTC MISS WORLD VIỆT NAM CHÍNH THỨC LÊN TIẾNG
       </Text>

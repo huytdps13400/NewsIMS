@@ -9,6 +9,8 @@ import SystemNews from './ProfileScreens/navigation/SystemNews';
 import PopularNews from './ProfileScreens/navigation/PopularNews';
 import SeenNews from './ProfileScreens/navigation/SeenNews';
 import NewsDetails from './Common/NewsDetails';
+import NotificationDetails from './NotificationScreens/navigation/NotificationDetails';
+
 export const bottom = {
   HOMESCREENS: HomeScreens,
   TENDENCYSCREENS: TendencyScreens,
@@ -21,4 +23,5 @@ export const bottom = {
   POPULARNEWS: PopularNews,
   SEENNEWS: SeenNews,
   NEWSDETAILS: NewsDetails,
+  NOTIFICATIONDETAILS: NotificationDetails,
 };

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Image, Switch, Platform, Pressable} from 'react-native';
 import {Block, Text} from '@components';
 import {icons} from '@assets';
+import styles from './styles';
 
 const ButtonUtility = ({icon, title, check, onPress}) => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -16,10 +17,7 @@ const ButtonUtility = ({icon, title, check, onPress}) => {
         justifyCenter
         space={'between'}>
         <Block row>
-          <Image
-            source={icon}
-            style={{width: 20, height: 20, resizeMode: 'contain'}}
-          />
+          <Image source={icon} style={styles.icon} />
           <Text marginLeft={10} size={15} fontType={'medium'}>
             {title}
           </Text>
@@ -31,18 +29,10 @@ const ButtonUtility = ({icon, title, check, onPress}) => {
             ios_backgroundColor="#0088EE"
             onValueChange={toggleSwitch}
             value={isEnabled}
-            style={{
-              transform:
-                Platform.OS === 'ios'
-                  ? [{scaleX: 0.8}, {scaleY: 0.8}]
-                  : [{scaleX: 1}, {scaleY: 1}],
-            }}
+            style={styles.switch}
           />
         ) : (
-          <Image
-            source={icons.next_right}
-            style={{width: 10, height: 10, resizeMode: 'contain'}}
-          />
+          <Image source={icons.next_right} style={styles.icon_next} />
         )}
       </Block>
     </Pressable>
