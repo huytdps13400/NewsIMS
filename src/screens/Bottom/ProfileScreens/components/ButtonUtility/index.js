@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import {Image, Switch, Platform, Pressable} from 'react-native';
-import {Block, Text} from '@components';
 import {icons} from '@assets';
+import {Block, Text} from '@components';
+import React, {useState} from 'react';
+import {Image, Pressable, Switch} from 'react-native';
 import styles from './styles';
 
 const ButtonUtility = ({icon, title, check, onPress}) => {

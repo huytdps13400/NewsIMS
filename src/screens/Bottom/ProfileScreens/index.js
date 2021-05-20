@@ -1,11 +1,11 @@
 import {icons} from '@assets';
 import {Block, Button, Header} from '@components';
+import {routes} from '@navigation/routes';
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import ButtonProfile from './components/ButtonProfile';
 import ButtonUtility from './components/ButtonUtility';
 import HeaderProfile from './components/HeaderProfile';
-import {routes} from '@navigation/routes';
-import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 const ProfileScreens = () => {
   const navigation = useNavigation();
@@ -49,7 +49,11 @@ const ProfileScreens = () => {
           check
         />
         <ButtonUtility icon={icons.profile3} title={'Gửi phản hồi'} />
-        <ButtonUtility icon={icons.profile4} title={'Điều khoản sử dụng'} />
+        <ButtonUtility
+          icon={icons.profile4}
+          title={'Điều khoản sử dụng'}
+          onPress={() => navigation.navigate(routes.TERMSOFUSE)}
+        />
         <ButtonUtility
           icon={icons.profile5}
           title={'Phiên bản hiện tại 10.8'}

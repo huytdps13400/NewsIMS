@@ -10,7 +10,7 @@ import PopularNews from './ProfileScreens/navigation/PopularNews';
 import SeenNews from './ProfileScreens/navigation/SeenNews';
 import NewsDetails from './Common/NewsDetails';
 import NotificationDetails from './NotificationScreens/navigation/NotificationDetails';
-
+import Termsofuse from './ProfileScreens/navigation/Termsofuse';
 export const bottom = {
   HOMESCREENS: HomeScreens,
   TENDENCYSCREENS: TendencyScreens,
@@ -24,4 +24,5 @@ export const bottom = {
   SEENNEWS: SeenNews,
   NEWSDETAILS: NewsDetails,
   NOTIFICATIONDETAILS: NotificationDetails,
+  TERMSOFUSE: Termsofuse,
 };

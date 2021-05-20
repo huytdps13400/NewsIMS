@@ -50,6 +50,7 @@ const RootStack = () => {
           name={routes.POPULARNEWS}
           component={bottom.POPULARNEWS}
         />
+        <Stack.Screen name={routes.TERMSOFUSE} component={bottom.TERMSOFUSE} />
         <Stack.Screen
           name={routes.NOTIFICATIONDETAILS}
           component={bottom.NOTIFICATIONDETAILS}
