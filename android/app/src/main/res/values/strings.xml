@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NewsIMS</string>
+        <string moduleConfig="true" name="CodePushDeploymentKey">Io0Y5RCzLTlW6L6syEGjVNRBkTkPvo8zL-N3g</string>
+
 </resources>
