@@ -23,10 +23,10 @@
       "@theme/*": ["theme/*"],
       "@utils": ["utils"],
       "@utils/*": ["utils/*"],
-      // "@redux": ["redux"],
-      // "@redux/*": ["redux/*"],
-      // "@hooks": ["hooks"],
-      // "@hooks/*": ["hooks/*"]
+      "@redux": ["redux"],
+      "@redux/*": ["redux/*"],
+      "@hooks": ["hooks"],
+      "@hooks/*": ["hooks/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
