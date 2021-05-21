@@ -1,10 +1,30 @@
-import React from 'react';
-import {Image, FlatList} from 'react-native';
-import {Block, Text, Header} from '@components';
+import React, { useEffect } from 'react';
+import { Image, FlatList } from 'react-native';
+import { Block, Text, Header } from '@components';
 import ItemNews from '@components/Common/itemNews';
+import actions from '@redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 const PopularNews = () => {
-  const _renderItem = item => <ItemNews />;
+  const dispatch = useDispatch();
+  const { data } = useSelector(state => state.news);
+
+
+  useEffect(() => {
+    dispatch({
+      type: actions.GET_NEWS,
+      params: {
+        p: 1,
+        numshow: 12,
+      },
+    });
+  }, [dispatch]);
+  const _renderItem = ({ item }) => <ItemNews
+    item_id={item.item_id}
+    title={item.title}
+    picture={item.picture}
+    date_update={item.date_update}
+  />;
   return (
     <Block marginBottom={20} flex>
       <Header title="Tin đọc nhiều" cangoBack />
@@ -12,8 +32,8 @@ const PopularNews = () => {
         <FlatList
           showsVerticalScrollIndicator={false}
           renderItem={_renderItem}
-          data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-          keyExtractor={(item, index) => index}
+          data={data}
+          keyExtractor={(item) => item.item_id}
         />
       </Block>
     </Block>

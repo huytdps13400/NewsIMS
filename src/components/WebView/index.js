@@ -1,9 +1,9 @@
-import {Block} from '@components';
+import { Block } from '@components';
 import React from 'react';
 import WebView from 'react-native-webview';
-import {getHtmlStyles} from 'utils/helper';
+import { getHtmlStyles } from 'utils/helper';
 
-const WEBView = ({data, style, scrollEnabled = true}) => {
+const WEBView = ({ data, style, scrollEnabled = true }) => {
   return (
     <Block flex style={style}>
       <WebView
@@ -14,18 +14,18 @@ const WEBView = ({data, style, scrollEnabled = true}) => {
         scalesPageToFit={false}
         useWebKit={true}
         originWhitelist={['*']}
-        // source={{
-        //   html: `
-        //   <html>
-        //   <head>
-        //     ${getHtmlStyles()}
-        //   </head>
-        //   <body>
-        //       ${data}
-        //   </body>
-        //   </html>`,
-        // }}
-        source={{uri: data}}
+        source={{
+          html: `
+          <html>
+          <head>
+            ${getHtmlStyles()}
+          </head>
+          <body>
+              ${data}
+          </body>
+          </html>`,
+        }}
+
         injectedJavaScript="window.ReactNativeWebView.postMessage(document.body.scrollHeight)"
       />
     </Block>
