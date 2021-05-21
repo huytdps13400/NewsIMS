@@ -1,15 +1,24 @@
 import {Block, Header, WebView} from '@components';
-import React from 'react';
+import actions from '@redux/actions';
+import {getSize} from '@utils/responsive';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
-const NewsDetails = () => {
+const NewsDetails = ({route}) => {
+  const {item_id} = route.params;
+  const data = useSelector(state => state.newsdetails?.data);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({
+      type: actions.GET_NEWSDETAILS,
+      params: {item_id: item_id, p: 1, numshow: 12},
+    });
+  }, [dispatch, item_id]);
   return (
-    <Block flex>
+    <Block flex backgroundColor="white">
       <Header title="Chi tiết tin tức" cangoBack />
-      <WebView
-        data={
-          'https://vietnamnet.vn/vn/suc-khoe/tp-hcm-than-toc-xet-nghiem-6-000-cu-dan-noi-co-ca-duong-tinh-covid-19-737787.html'
-        }
-      />
+
+      <WebView style={{padding: getSize.m(12)}} data={data?.content} />
     </Block>
   );
 };

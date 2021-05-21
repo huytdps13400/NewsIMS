@@ -38,19 +38,19 @@ const BottomTabNavigation = () => {
       />
 
       {/* {true ? ( */}
-      {/* <Tab.Screen
+      <Tab.Screen
         name={routes.PROFILESCREENS}
         component={bottom.PROFILESCREENS}
         options={{
           tabBarLabel: 'Tài khoản',
         }}
-      /> */}
+      />
       {/* ) : ( */}
-      <Tab.Screen
+      {/* <Tab.Screen
         name={routes.PROFILESCREENS}
         component={auth.AUTH_CONTAINER}
         options={{tabBarLabel: 'Tài khoản'}}
-      />
+      /> */}
       {/* )} */}
     </Tab.Navigator>
   );

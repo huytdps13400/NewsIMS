@@ -1,11 +1,28 @@
 import {Block, Header} from '@components';
 import ItemNews from '@components/Common/itemNews';
+import actions from '@redux/actions';
 import {getSize} from '@utils/responsive';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {FlatList} from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
+
 const SystemNews = () => {
-  const _renderItem = () => {
-    return <ItemNews />;
+  const data = useSelector(state => state.news?.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({type: actions.GET_NEWS, params: {p: 1, numshow: 12}});
+  }, [dispatch]);
+
+  const _renderItem = ({item}) => {
+    return (
+      <ItemNews
+        item_id={item.item_id}
+        picture={item.picture}
+        date_update={item.date_update}
+        title={item.title}
+      />
+    );
   };
   return (
     <Block flex marginBottom={getSize.m(20)}>
@@ -14,9 +31,9 @@ const SystemNews = () => {
         <FlatList
           showsVerticalScrollIndicator={false}
           removeClippedSubviews={true}
-          data={[1, 2, 3, 4, 5, 6, 7, 8]}
+          data={data}
           renderItem={_renderItem}
-          keyExtractor={item => item}
+          keyExtractor={item => item.item_id}
         />
       </Block>
     </Block>

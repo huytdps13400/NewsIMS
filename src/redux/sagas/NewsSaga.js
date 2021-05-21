@@ -1,9 +1,7 @@
 import API from '@utils/api';
-import { hanldeErrorCode } from '@utils/handleErrorCode';
-import queryString from 'query-string';
-import Config from 'react-native-config';
-import { put, takeLatest } from 'redux-saga/effects';
-import Actions, { _onFail, _onSuccess } from '../actions';
+import {hanldeErrorCode} from '@utils/handleErrorCode';
+import {put, takeLatest} from 'redux-saga/effects';
+import Actions, {_onFail, _onSuccess} from '../actions';
 
 function* getNews(actions) {
   try {
@@ -15,7 +13,7 @@ function* getNews(actions) {
       isLoadMore: actions.isLoadMore,
     });
   } catch (error) {
-    yield put({ type: _onFail(Actions.GET_NEWS) });
+    yield put({type: _onFail(Actions.GET_NEWS)});
     hanldeErrorCode(error);
   }
 }
@@ -25,10 +23,9 @@ function* getNewsDetails(actions) {
     yield put({
       type: _onSuccess(Actions.GET_NEWSDETAILS),
       data: res.data,
-
     });
   } catch (error) {
-    yield put({ type: _onFail(Actions.GET_NEWSDETAILS) });
+    yield put({type: _onFail(Actions.GET_NEWSDETAILS)});
     hanldeErrorCode(error);
   }
 }
