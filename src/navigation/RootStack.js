@@ -39,12 +39,16 @@ const RootStack = () => {
           component={bottom.NEWSDETAILS}
         />
         <Stack.Screen
-          name={routes.LOGINSCREERN}
-          component={auth.LOGINSCREERN}
+          name={routes.LOGIN_SCREEN}
+          component={auth.LOGIN_SCREEN}
         />
         <Stack.Screen
-          name={routes.SIGNUPSCREEN}
-          component={auth.SIGNUPSCREEN}
+          name={routes.SIGNUP_SCREEN}
+          component={auth.SIGNUP_SCREEN}
+        />
+        <Stack.Screen
+          name={routes.FOR_GET_PASS_SCREEN}
+          component={auth.FOR_GET_PASS_SCREEN}
         />
         <Stack.Screen
           name={routes.POPULARNEWS}

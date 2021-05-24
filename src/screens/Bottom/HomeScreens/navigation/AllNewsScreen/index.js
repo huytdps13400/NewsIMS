@@ -3,13 +3,15 @@ import ItemNews from '@components/Common/itemNews';
 import {getSize} from '@utils/responsive';
 import React from 'react';
 import {FlatList} from 'react-native';
+
 const AllNewsScreen = () => {
   const _renderItem = () => {
     return <ItemNews />;
   };
+
   return (
     <Block flex marginBottom={getSize.m(20)}>
-      <Header title="Tin thế giới" cangoBack />
+      <Header title="Tin thế giới" canGoBack />
       <FlatList
         showsVerticalScrollIndicator={false}
         removeClippedSubviews={true}

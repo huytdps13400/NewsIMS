@@ -20,10 +20,12 @@ const Tendency = ({
   listtext,
   style,
 }) => {
-  const _renderItem = ({item}) => {
+  const navigation = useNavigation();
+
+  const _renderItem = () => {
     return <ItemNews />;
   };
-  const navigation = useNavigation();
+
   const _renderItemBox = ({item, index}) => {
     return (
       <Block flex>
@@ -51,6 +53,7 @@ const Tendency = ({
       </Block>
     );
   };
+
   return (
     <Block marginTop={getSize.m(28)}>
       <Block paddingHorizontal={getSize.m(12)}>

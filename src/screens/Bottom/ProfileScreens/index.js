@@ -2,13 +2,31 @@ import {icons} from '@assets';
 import {Block, Button, Header} from '@components';
 import {routes} from '@navigation/routes';
 import {useNavigation} from '@react-navigation/native';
+import actions from '@redux/actions';
+import Storage from '@utils/storage';
 import React from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import ButtonProfile from './components/ButtonProfile';
 import ButtonUtility from './components/ButtonUtility';
 import HeaderProfile from './components/HeaderProfile';
 import styles from './styles';
+
 const ProfileScreens = () => {
   const navigation = useNavigation();
+  const {isLoading} = useSelector(state => state.logOut);
+  const dispatch = useDispatch();
+
+  const _handleLogOut = () => {
+    Storage.getItem('TOKEN_USER').then(tokenUser => {
+      dispatch({
+        type: actions.LOGOUT_ACCOUNT,
+        params: {
+          user: tokenUser,
+        },
+      });
+    });
+  };
+
   return (
     <Block flex backgroundColor={'#fff'}>
       <Header />
@@ -58,7 +76,12 @@ const ProfileScreens = () => {
           icon={icons.profile5}
           title={'Phiên bản hiện tại 10.8'}
         />
-        <Button title={'Đăng xuất'} />
+        <Button
+          style={styles.btnLogout}
+          title={'ĐANG XUẤT'}
+          onPress={() => _handleLogOut()}
+          disabled={isLoading}
+        />
       </Block>
     </Block>
   );
