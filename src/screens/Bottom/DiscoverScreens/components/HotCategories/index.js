@@ -1,6 +1,6 @@
-import {Block, Text} from '@components';
+import { Block, Text } from '@components';
 import React from 'react';
-import {FlatList} from 'react-native';
+import { FlatList } from 'react-native';
 
 const HotCategories = () => {
   const _renderItem = () => (
@@ -26,7 +26,7 @@ const HotCategories = () => {
   );
 
   return (
-    <Block paddingTop={23} paddingHorizontal={18}>
+    <Block paddingTop={23} paddingHorizontal={12}>
       <Text size={19} fontType="semibold">
         Chủ đề nổi bật
       </Text>

@@ -1,12 +1,12 @@
 import React from 'react';
-import {Image, Pressable} from 'react-native';
-import {Block, Text} from '@components';
-import {getSize} from '@utils/responsive';
-import {icons, images} from '@assets';
+import { Image, Pressable } from 'react-native';
+import { Block, Text } from '@components';
+import { getSize } from '@utils/responsive';
+import { icons, images } from '@assets';
 import styles from './styles';
-import {routes} from '@navigation/routes';
-import {useNavigation} from '@react-navigation/native';
-const HeaderProfile = ({next}) => {
+import { routes } from '@navigation/routes';
+import { useNavigation } from '@react-navigation/native';
+const HeaderProfile = ({ next }) => {
   const navigation = useNavigation();
   return (
     <Block
@@ -15,9 +15,10 @@ const HeaderProfile = ({next}) => {
       row
       paddingHorizontal={33}
       paddingBottom={getSize.m(80)}
-      space={'between'}
-      backgroundColor={'#0088EE'}
-      style={styles.header}>
+      space='between'
+      backgroundColor='#0088EE'
+    >
+
       <Block row justifyCenter space={'between'}>
         <Block justifyCenter space={'between'}>
           <Image source={icons.avatar} style={styles.imgAvatar} />
