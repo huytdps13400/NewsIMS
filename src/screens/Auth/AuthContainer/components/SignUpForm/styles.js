@@ -8,4 +8,7 @@ export default StyleSheet.create({
     backgroundColor: theme.colors.smoke,
     marginTop: getSize.m(10),
   },
+  errorStyles: {
+    marginTop: getSize.m(10),
+  },
 });

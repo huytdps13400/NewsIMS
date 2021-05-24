@@ -29,7 +29,7 @@ export const icons = {
   profile6: require('./icons/profile6.png'),
   profile7: require('./icons/profile7.png'),
   profile8: require('./icons/profile8.png'),
-  profile9: require('./icons/profile9.png'),
+  phone: require('./icons/phone.png'),
   profile10: require('./icons/profile10.png'),
   logoAuth: require('./icons/logoAuth.png'),
   auth_user: require('./icons/auth_user.png'),
@@ -39,6 +39,7 @@ export const icons = {
   apple: require('./icons/apple.png'),
   facebook: require('./icons/facebook.png'),
   auth_email: require('./icons/auth_email.png'),
+  auth_phone: require('./icons/auth_phone.png'),
 };
 
 export const images = {

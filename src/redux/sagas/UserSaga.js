@@ -65,9 +65,20 @@ function* logOut(actions) {
   }
 }
 
+function* forgetPasUser(actions) {
+  try {
+    const res = yield API.get('fogetPassword', actions.params);
+    yield put({type: _onSuccess(Actions.FORGET_PASS_USER), data: res.code});
+  } catch (error) {
+    yield put({type: _onFail(Actions.FORGET_PASS_USER)});
+    hanldeErrorCode(error);
+  }
+}
+
 export function* watchUserSagas() {
   yield takeLatest(Actions.LOGIN_ACCOUNT, login);
   yield takeLatest(Actions.SIGNUP_ACCOUNT, signUp);
   yield takeLatest(Actions.GET_USER_INFORMATION, getUser);
   yield takeLatest(Actions.LOGOUT_ACCOUNT, logOut);
+  yield takeLatest(Actions.FORGET_PASS_USER, forgetPasUser);
 }

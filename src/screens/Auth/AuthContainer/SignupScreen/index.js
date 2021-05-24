@@ -4,7 +4,7 @@ import {theme} from '@theme';
 import {getSize, height} from '@utils/responsive';
 import {Formik} from 'formik';
 import React, {useEffect, useState} from 'react';
-import {Image, Pressable} from 'react-native';
+import {Image, Pressable, Keyboard} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import actions from 'redux/actions';
 import PolicyModal from '../components/PolicyModal';
@@ -36,10 +36,8 @@ const SignUpScreen = ({callback}) => {
   }, [dispatch]);
 
   const _onSubmit = values => {
-    // Keyboard.dismiss();
-    console.log('====================================');
-    console.log(values);
-    console.log('====================================');
+    Keyboard.dismiss();
+
     dispatch({
       type: actions.SIGNUP_ACCOUNT,
       body: {
@@ -57,10 +55,11 @@ const SignUpScreen = ({callback}) => {
       onSubmit={_onSubmit}
       validationSchema={signUpValidate}>
       <Block
-        marginTop={height / 4}
+        backgroundColor="background"
+        marginTop={height / 6}
+        marginHorizontal={20}
         borderRadius={20}
         marginBottom={20}
-        marginHorizontal={20}
         opacity={modalPolicy ? 0 : 1}>
         <Block backgroundColor="white" radius={8}>
           <Block alignCenter marginTop={30}>

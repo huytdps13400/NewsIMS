@@ -10,11 +10,14 @@ export default StyleSheet.create({
     borderWidth: 0.5,
     borderColor: 'blue',
   },
-
-  CheckBox: {
-    textAlign: 'center',
-    fontSize: 12,
-    color: theme.colors.blue,
-    marginTop: 16,
+  errorStyles: {
+    marginTop: getSize.m(10),
   },
+
+  // CheckBox: {
+  //   textAlign: 'center',
+  //   fontSize: 12,
+  //   color: theme.colors.blue,
+  //   marginTop: 16,
+  // },
 });

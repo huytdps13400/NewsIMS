@@ -30,7 +30,7 @@ const ProfileDetails = () => {
         <ButtonInfo icon={icons.profile6} title={'Giớt tính: Nam'} />
         <ButtonInfo icon={icons.profile7} title={'Ngày sinh: 29/05/1991'} />
         <ButtonInfo icon={icons.profile8} title={'Thành phố: Hồ Chí Minh'} />
-        <ButtonInfo icon={icons.profile9} title={'Điện thoại: 034 397 3451'} />
+        <ButtonInfo icon={icons.phone} title={'Điện thoại: 034 397 3451'} />
         <ButtonInfo
           icon={icons.profile10}
           title={'Tình trạng hôn nhân: Độc thân'}
