@@ -8,6 +8,7 @@ import FormInput from '@components/Form/FormInput';
 import TextInput from '@components/TextInput';
 import CheckBox from '@components/CheckBox';
 import FormContainer from '@components/Form/FormContainer';
+import Loading from '@components/Common/Loading';
 
 export {
   Block,
@@ -20,4 +21,5 @@ export {
   TextInput,
   CheckBox,
   FormContainer,
+  Loading,
 };

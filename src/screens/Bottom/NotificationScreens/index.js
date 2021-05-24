@@ -80,7 +80,7 @@ const NotificationScreens = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Item
           data={data}
-          onPress={() => navigation.navigate(routes.NOTIFICATIONDETAILS)}
+          onPress={() => navigation.navigate(routes.NOTIFICATION_DETAILS)}
         />
       </ScrollView>
     </Block>

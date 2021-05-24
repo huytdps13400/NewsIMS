@@ -19,24 +19,27 @@ const RootStack = () => {
       />
       <Stack.Navigator
         mode="modal"
-        initialRouteName={routes.BOTTOMTABBAR}
+        initialRouteName={routes.BOTTOM_TAB_BAR}
         screenOptions={{headerShown: false}}>
         <Stack.Screen
-          name={routes.BOTTOMTABBAR}
+          name={routes.BOTTOM_TAB_BAR}
           component={BottomTabNavigation}
         />
         <Stack.Screen
-          name={routes.PROFILEDETAILS}
-          component={bottom.PROFILEDETAILS}
+          name={routes.PROFILE_DETAILS}
+          component={bottom.PROFILE_DETAILS}
         />
         <Stack.Screen
-          name={routes.ALLNEWSSCREEN}
-          component={bottom.ALLNEWSSCREEN}
+          name={routes.ALL_NEWS_SCREEN}
+          component={bottom.ALL_NEWS_SCREEN}
         />
-        <Stack.Screen name={routes.SYSTEMNEWS} component={bottom.SYSTEMNEWS} />
         <Stack.Screen
-          name={routes.NEWSDETAILS}
-          component={bottom.NEWSDETAILS}
+          name={routes.SYSTEM_NEWS}
+          component={bottom.SYSTEM_NEWS}
+        />
+        <Stack.Screen
+          name={routes.NEWS_DETAILS}
+          component={bottom.NEWS_DETAILS}
         />
         <Stack.Screen
           name={routes.LOGIN_SCREEN}
@@ -51,15 +54,21 @@ const RootStack = () => {
           component={auth.FOR_GET_PASS_SCREEN}
         />
         <Stack.Screen
-          name={routes.POPULARNEWS}
-          component={bottom.POPULARNEWS}
+          name={routes.POPULAR_NEWS}
+          component={bottom.POPULAR_NEWS}
         />
-        <Stack.Screen name={routes.TERMSOFUSE} component={bottom.TERMSOFUSE} />
         <Stack.Screen
-          name={routes.NOTIFICATIONDETAILS}
-          component={bottom.NOTIFICATIONDETAILS}
+          name={routes.TERMS_OF_USE}
+          component={bottom.TERMS_OF_USE}
         />
-        <Stack.Screen name={routes.SEENRNEWS} component={bottom.SEENNEWS} />
+        <Stack.Screen
+          name={routes.NOTIFICATION_DETAILS}
+          component={bottom.NOTIFICATION_DETAILS}
+        />
+        <Stack.Screen
+          name={routes.WATCHED_NEWS}
+          component={bottom.WATCHED_NEWS}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
