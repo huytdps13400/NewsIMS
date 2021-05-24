@@ -22,10 +22,10 @@ const ProfileDetails = () => {
         style={{position: 'absolute', top: 160, alignSelf: 'center'}}
         backgroundColor={'#fff'}>
         <Block row justifyCenter space={'between'} marginTop={20}>
-          <Text size={16} fontType={'bold'}>
+          <Text size={16} fontType="bold">
             Thông tin hồ sơ của bạn
           </Text>
-          <Image style={{width: 17, height: 17}} source={icons.edit}></Image>
+          <Image style={{width: 17, height: 17}} source={icons.edit} />
         </Block>
         <ButtonInfo icon={icons.profile6} title={'Giớt tính: Nam'} />
         <ButtonInfo icon={icons.profile7} title={'Ngày sinh: 29/05/1991'} />

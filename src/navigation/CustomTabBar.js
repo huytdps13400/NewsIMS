@@ -8,6 +8,7 @@ import {getSize} from '@utils/responsive';
 
 const CustomTabBar = ({state, descriptors, navigation}) => {
   const {bottom} = useSafeAreaInsets();
+
   return (
     <Block
       row
@@ -70,9 +71,14 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
     </Block>
   );
 };
+
 export default CustomTabBar;
+
 const styles = StyleSheet.create({
-  btn: {flex: 1, alignItems: 'center'},
+  btn: {
+    flex: 1,
+    alignItems: 'center',
+  },
   textlabel: isFocused => ({
     color: isFocused ? '#096CFF' : theme.colors.lightGray,
     marginTop: 5,

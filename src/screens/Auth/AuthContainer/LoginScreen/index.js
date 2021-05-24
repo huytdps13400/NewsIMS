@@ -26,7 +26,7 @@ const LoginScreen = ({callback}) => {
               resizeMode={'contain'}
             />
           </Block>
-          <Text size={18} color="blue" fontType={'semibold'}>
+          <Text size={18} color="blue" fontType="semibold">
             ĐĂNG NHẬP
           </Text>
           <Text color={theme.colors.placeholder} marginTop={15}>
@@ -67,10 +67,10 @@ const LoginScreen = ({callback}) => {
         </Block>
         <Block row alignCenter justifyCenter paddingBottom={16}>
           <Pressable flexDirection="row" onPress={callback}>
-            <Text size={12} fontType={'semibold'}>
+            <Text size={12} fontType="semibold">
               Bạn chưa có tài khoảng ?{'   '}
             </Text>
-            <Text size={12} color="blue" fontType={'semibold'}>
+            <Text size={12} color="blue" fontType="semibold">
               Đăng ký ngay
             </Text>
           </Pressable>

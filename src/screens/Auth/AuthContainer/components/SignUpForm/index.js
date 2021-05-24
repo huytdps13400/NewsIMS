@@ -40,7 +40,7 @@ const SignUpForm = ({isLoading, setModalPolicy, checkPolicy}) => {
       <Pressable onPress={setModalPolicy}>
         <Text size={12} center marginTop={16}>
           Đăng ký là bạn đã chấp nhận
-          <Text size={12} color="blue" fontType={'semibold'}>
+          <Text size={12} color="blue" fontType="semibold">
             Điều khoản sử dụng
           </Text>
         </Text>

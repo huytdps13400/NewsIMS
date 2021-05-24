@@ -17,6 +17,7 @@ function* getNews(actions) {
     hanldeErrorCode(error);
   }
 }
+
 function* getNewsDetails(actions) {
   try {
     const res = yield API.get('getNews', actions.params);

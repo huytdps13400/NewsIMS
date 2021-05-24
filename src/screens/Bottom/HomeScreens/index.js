@@ -3,7 +3,9 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import React from 'react';
 import TabScreens from './components/TabScreens';
 import TopTabBar from './components/TabScreens/CustomTabbar';
+
 const Tab = createMaterialTopTabNavigator();
+
 const HomeScreens = () => {
   const DATATAB = [
     {
@@ -27,6 +29,7 @@ const HomeScreens = () => {
       title: 'Bóng đá việt nam',
     },
   ];
+
   return (
     <Block flex>
       <Header type="Home" />

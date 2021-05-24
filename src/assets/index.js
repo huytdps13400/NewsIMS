@@ -40,6 +40,7 @@ export const icons = {
   facebook: require('./icons/facebook.png'),
   auth_email: require('./icons/auth_email.png'),
 };
+
 export const images = {
   discover: require('./images/discover.png'),
   bannerhome: require('./images/bannerhome.png'),

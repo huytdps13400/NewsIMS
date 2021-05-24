@@ -4,6 +4,7 @@ import {getSize, width} from '@utils/responsive';
 import React from 'react';
 import {Image} from 'react-native';
 import styles from './styles';
+
 const HighLight = () => {
   return (
     <Block>

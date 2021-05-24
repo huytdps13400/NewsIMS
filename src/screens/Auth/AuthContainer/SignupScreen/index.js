@@ -50,7 +50,7 @@ const SignupScreen = ({callback}) => {
             }}
             resizeMode={'contain'}
           />
-          <Text size={18} color="blue" fontType={'semibold'}>
+          <Text size={18} color="blue" fontType="semibold">
             ĐĂNG KÝ
           </Text>
           <Text color={theme.colors.placeholder} marginTop={15}>
@@ -69,7 +69,7 @@ const SignupScreen = ({callback}) => {
             Bạn đã có tài khoản
           </Text>
           <Pressable onPress={callback}>
-            <Text size={12} color="blue" fontType={'semibold'}>
+            <Text size={12} color="blue" fontType="semibold">
               Đăng nhập ngay
             </Text>
           </Pressable>

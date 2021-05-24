@@ -1,8 +1,10 @@
 import {Block, Header} from '@components';
 import {theme} from '@theme';
+import {getSize} from '@utils/responsive';
 import React from 'react';
 import {ScrollView} from 'react-native';
 import Tendency from './components/Tendency';
+
 const TendencyScreens = () => {
   return (
     <Block flex>
@@ -24,7 +26,7 @@ const TendencyScreens = () => {
           onebox
           threebox
           list
-          style={{marginTop: 10}}
+          style={{marginTop: getSize.m(20)}}
         />
       </ScrollView>
     </Block>

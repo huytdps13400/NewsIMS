@@ -1,9 +1,8 @@
-import {Block, Text, Header} from '@components';
+import {Block, Header} from '@components';
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {ScrollView} from 'react-native';
 import CategoriesGroup from './components/CategoriesGroup';
 import HotCategories from './components/HotCategories';
-import {ScrollView} from 'react-native';
 
 const data = [
   {
@@ -69,5 +68,3 @@ const DiscoverScreens = () => {
 };
 
 export default DiscoverScreens;
-
-const styles = StyleSheet.create({});

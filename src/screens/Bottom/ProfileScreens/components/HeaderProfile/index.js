@@ -20,21 +20,21 @@ const HeaderProfile = ({next}) => {
       style={styles.header}>
       <Block row justifyCenter space={'between'}>
         <Block justifyCenter space={'between'}>
-          <Image source={icons.avatar} style={styles.imgAvatar}></Image>
-          <Image source={icons.camera} style={styles.imgCamera}></Image>
+          <Image source={icons.avatar} style={styles.imgAvatar} />
+          <Image source={icons.camera} style={styles.imgCamera} />
         </Block>
         <Block marginLeft={14} paddingVertical={6}>
-          <Text size={16} color={'#fff'} fontType={'bold'}>
+          <Text size={16} color={'#fff'} fontType="bold">
             Lê Ngọc Luân
           </Text>
-          <Text size={14} color={'#fff'} fontType={'Semibold'}>
+          <Text size={14} color={'#fff'} fontType="semibold">
             lengocluan1991@gmail.com
           </Text>
         </Block>
       </Block>
       {next ? (
         <Pressable onPress={() => navigation.navigate(routes.PROFILEDETAILS)}>
-          <Image style={styles.imgNext} source={icons.next}></Image>
+          <Image style={styles.imgNext} source={icons.next} />
         </Pressable>
       ) : null}
     </Block>

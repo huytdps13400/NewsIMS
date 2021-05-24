@@ -36,7 +36,7 @@ const HeaderNotification = () => {
             style={styles.image3}
           />
         </Pressable>
-        <Text marginLeft={17} size={14} color={'#2374DF'} fontType={'semibold'}>
+        <Text marginLeft={17} size={14} color={'#2374DF'} fontType="semibold">
           Đánh dấu là đã đọc
         </Text>
       </Block>
