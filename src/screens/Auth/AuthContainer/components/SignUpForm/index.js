@@ -1,13 +1,12 @@
 import {icons} from '@assets';
 import {Block, Button, FormInput, Text} from '@components';
-
-// import {useFormikContext} from 'formik';
+import {useFormikContext} from 'formik';
 import React from 'react';
-import styles from './styles';
 import {Pressable} from 'react-native';
+import styles from './styles';
 
 const SignUpForm = ({isLoading, setModalPolicy, checkPolicy}) => {
-  // const {handleSubmit} = useFormikContext();
+  const {handleSubmit} = useFormikContext();
 
   return (
     <Block marginHorizontal={16} marginTop={10}>
@@ -18,22 +17,29 @@ const SignUpForm = ({isLoading, setModalPolicy, checkPolicy}) => {
         style={styles.textInput}
       />
       <FormInput
+        name="email"
+        iconLeft={icons.auth_email}
+        placeholder="Nhập email của bạn"
+        style={styles.textInput}
+      />
+      <FormInput
+        name="phone"
+        iconLeft={icons.auth_email}
+        placeholder="Nhập số điện thoại"
+        style={styles.textInput}
+      />
+      <FormInput
+        isSecure
         name="password"
         iconLeft={icons.auth_password}
         placeholder="Mật khẩu"
         style={styles.textInput}
       />
       <FormInput
-        name="password"
+        isSecure
+        name="rePassword"
         iconLeft={icons.auth_password}
         placeholder="Nhập lại mật khẩu"
-        style={styles.textInput}
-      />
-      <FormInput
-        isSecure
-        name="email"
-        iconLeft={icons.auth_email}
-        placeholder="Nhập email của bạn"
         style={styles.textInput}
       />
 
@@ -46,7 +52,11 @@ const SignUpForm = ({isLoading, setModalPolicy, checkPolicy}) => {
         </Text>
       </Pressable>
 
-      <Button title="ĐĂNG KÝ" onPress={setModalPolicy} disabled={isLoading} />
+      <Button
+        title="ĐĂNG KÝ"
+        onPress={checkPolicy ? handleSubmit : setModalPolicy}
+        disabled={isLoading}
+      />
     </Block>
   );
 };
