@@ -13,8 +13,8 @@ import React, {useEffect, useRef, useState} from 'react';
 import {Image, Pressable} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import ForgetSuccess from './components/ForgetSuccess';
-import styles from './styles';
 import {validation} from './validation';
+import styles from './styles';
 
 const INITIAL_VALUES = {emailOrPhone: ''};
 
