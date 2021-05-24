@@ -1,5 +1,5 @@
-import { Block, Header } from '@components';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import {Block, Header} from '@components';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import React from 'react';
 import TabScreens from './components/TabScreens';
 import TopTabBar from './components/TabScreens/CustomTabbar';
