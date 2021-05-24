@@ -1,7 +1,7 @@
 import {icons} from '@assets';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {theme} from '@theme';
-import {Block, Text} from '@components';
+import {Block, Text, Loading} from '@components';
 import {getSize, height} from '@utils/responsive';
 import {Formik} from 'formik';
 import {Image, Keyboard, Platform, Pressable} from 'react-native';
@@ -10,6 +10,7 @@ import actions from 'redux/actions';
 import LoginForm from '../components/LoginForm';
 import LoginSocialButton from './../components/LoginSocialButtom';
 import {loginValidate} from './validation';
+import {useSocialLogin} from 'hooks';
 
 const INITIAL_VALUES = {username: '', password: ''};
 
@@ -17,6 +18,50 @@ const LoginScreen = ({callback}) => {
   const dispatch = useDispatch();
   const {device_token, device_name} = useSelector(state => state.device);
   const {isLoading} = useSelector(state => state.login);
+  // const {data, fetching, handleLoginGoogle} = useSocialLogin();
+
+  // useEffect(() => {
+  //   try {
+  //     if (data) {
+  //       const {value, type} = data;
+  //       if (value) {
+  //         if (type === 'facebook') {
+  //           dispatch({
+  //             type: actions.LOGIN_FACEBOOK,
+  //             body: {
+  //               info: JSON.stringify(value),
+  //               fbID: value.id,
+  //               device_token,
+  //               device_name,
+  //             },
+  //           });
+  //         } else if (type === 'google') {
+  //           dispatch({
+  //             type: actions.LOGIN_GOOGLE,
+  //             body: {
+  //               info: JSON.stringify({user: value.user}),
+  //               ggID: value.user.id,
+  //               device_token,
+  //               device_name,
+  //             },
+  //           });
+  //         } else if (type === 'apple') {
+  //           dispatch({
+  //             type: actions.LOGIN_APPLE,
+  //             body: {
+  //               info: JSON.stringify(value),
+  //               apID: value.sub,
+  //               device_token,
+  //               device_name,
+  //             },
+  //           });
+  //         }
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, [data, device_name, device_token, dispatch]);
 
   const _onSubmit = values => {
     Keyboard.dismiss();
@@ -103,6 +148,7 @@ const LoginScreen = ({callback}) => {
             </Pressable>
           </Block>
         </Block>
+        {/* {fetching && <Loading />} */}
       </Block>
     </Formik>
   );

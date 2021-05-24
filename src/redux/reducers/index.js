@@ -4,6 +4,7 @@ import {NewsReducer} from './NewsReducer';
 import {PageByIDReducer} from './PageByIDReducer';
 import {TokenReducer} from './TokenReducer';
 import {UserReducer} from './UserReducer';
+import {ConfigReducer} from './ConfigReducer';
 
 const rootReducer = combineReducers({
   ...TokenReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   ...PageByIDReducer,
   ...UserReducer,
   ...DeviceReducer,
+  ...ConfigReducer,
 });
 
 export default rootReducer;
