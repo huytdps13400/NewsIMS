@@ -1,14 +1,14 @@
-import { Block, Text } from '@components';
-import { width } from '@utils/responsive';
+import {Block, Text} from '@components';
+import {width} from '@utils/responsive';
 import React from 'react';
-import { Image, Pressable, ScrollView } from 'react-native';
+import {Image, Pressable, ScrollView} from 'react-native';
 import styles from './styles';
 
-const CategoriesGroup = React.memo(({ data }) => {
-  const _renderItem = ({ item }) => (
+const CategoriesGroup = React.memo(({data}) => {
+  const _renderItem = ({item}) => (
     <Pressable>
       <Block alignCenter width={width / 5} marginRight={13} radius={10}>
-        <Image style={styles.image} source={{ uri: item.image }} />
+        <Image style={styles.image} source={{uri: item.image}} />
         <Text marginTop={10} center size={14}>
           {item.title}
         </Text>

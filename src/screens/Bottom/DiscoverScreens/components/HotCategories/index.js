@@ -1,6 +1,6 @@
-import { Block, Text } from '@components';
+import {Block, Text} from '@components';
 import React from 'react';
-import { FlatList } from 'react-native';
+import {FlatList} from 'react-native';
 
 const HotCategories = () => {
   const _renderItem = () => (
