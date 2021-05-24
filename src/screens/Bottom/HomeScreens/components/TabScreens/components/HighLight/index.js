@@ -28,7 +28,7 @@ const HighLight = () => {
             }}
             style={styles.imgstyle}
           />
-          <Text size={16} marginTop={getSize.m(5)}>
+          <Text size={16} numberOfLines={3} marginTop={getSize.m(5)}>
             'Quyền lực mềm' của Việt Nam tăng hạng sau một năm chống COVID-19
           </Text>
           <Text color={theme.colors.lightGray}>Xã hội</Text>
@@ -40,7 +40,7 @@ const HighLight = () => {
             }}
             style={styles.imgstyle}
           />
-          <Text size={16} marginTop={getSize.m(5)}>
+          <Text size={16} numberOfLines={3} marginTop={getSize.m(5)}>
             'Quyền lực mềm' của Việt Nam tăng hạng sau một năm chống COVID-19
           </Text>
           <Text color={theme.colors.lightGray}>Xã hội</Text>

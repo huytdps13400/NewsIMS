@@ -1,5 +1,5 @@
-import {getSize} from '@utils/responsive';
-import {StyleSheet} from 'react-native';
+import { getSize } from '@utils/responsive';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   imgAvatar: {
@@ -21,8 +21,5 @@ export default StyleSheet.create({
     height: getSize.s(26),
     resizeMode: 'contain',
   },
-  header: {
-    borderBottomLeftRadius: getSize.m(60),
-    borderBottomRightRadius: getSize.m(60),
-  },
+
 });

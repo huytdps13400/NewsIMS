@@ -15,6 +15,7 @@ const Offer = ({title, titlevideo, describe, onebox, threebox, list}) => {
     return <ItemNews />;
   };
   const navigation = useNavigation();
+
   return (
     <Block marginTop={getSize.m(28)}>
       <Block paddingHorizontal={getSize.m(12)}>
