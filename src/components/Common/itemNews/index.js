@@ -13,7 +13,7 @@ const itemNews = React.memo(
     return (
       <Block marginTop={getSize.m(18)}>
         <Pressable
-          onPress={() => navigation.navigate(routes.NEWSDETAILS, {item_id})}>
+          onPress={() => navigation.navigate(routes.NEWS_DETAILS, {item_id})}>
           <Block row>
             <Image
               source={{
