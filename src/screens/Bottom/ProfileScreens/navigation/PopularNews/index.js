@@ -28,7 +28,7 @@ const PopularNews = () => {
   );
   return (
     <Block marginBottom={20} flex>
-      <Header title="Tin đọc nhiều" cangoBack />
+      <Header title="Tin đọc nhiều" canGoBack />
       <Block paddingHorizontal={12} flex>
         <FlatList
           showsVerticalScrollIndicator={false}

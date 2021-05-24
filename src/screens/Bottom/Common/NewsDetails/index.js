@@ -18,7 +18,7 @@ const NewsDetails = ({route}) => {
 
   return (
     <Block flex backgroundColor="white">
-      <Header title="Chi tiết tin tức" cangoBack />
+      <Header title="Chi tiết tin tức" canGoBack />
       <WebView style={{padding: getSize.m(12)}} data={data?.content} />
     </Block>
   );

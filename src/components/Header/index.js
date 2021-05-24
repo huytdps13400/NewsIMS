@@ -46,7 +46,7 @@ const HeaderHome = () => {
   );
 };
 
-const HeaderCommon = ({title, cangoBack}) => {
+const HeaderCommon = ({title, canGoBack}) => {
   const {top} = useSafeAreaInsets();
   const navigation = useNavigation();
   return (
@@ -58,7 +58,7 @@ const HeaderCommon = ({title, cangoBack}) => {
         paddingHorizontal={12}
         paddingVertical={16}
         space="between">
-        {cangoBack && (
+        {canGoBack && (
           <Pressable onPress={() => navigation.goBack()}>
             <Image source={icons.back} style={styles.icoBack} />
           </Pressable>

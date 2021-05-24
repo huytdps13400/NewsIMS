@@ -9,24 +9,27 @@ const SignUpForm = ({isLoading, setModalPolicy, checkPolicy}) => {
   const {handleSubmit} = useFormikContext();
 
   return (
-    <Block marginHorizontal={16} marginTop={10}>
+    <Block marginHorizontal={16} marginTop={10} paddingVertical>
       <FormInput
         name="full_name"
         iconLeft={icons.auth_user}
         placeholder="Tên đăng nhập"
         style={styles.textInput}
+        errorTextStyles={styles.errorStyles}
       />
       <FormInput
         name="email"
         iconLeft={icons.auth_email}
         placeholder="Nhập email của bạn"
         style={styles.textInput}
+        errorTextStyles={styles.errorStyles}
       />
       <FormInput
         name="phone"
-        iconLeft={icons.auth_email}
+        iconLeft={icons.auth_phone}
         placeholder="Nhập số điện thoại"
         style={styles.textInput}
+        errorTextStyles={styles.errorStyles}
       />
       <FormInput
         isSecure
@@ -34,6 +37,7 @@ const SignUpForm = ({isLoading, setModalPolicy, checkPolicy}) => {
         iconLeft={icons.auth_password}
         placeholder="Mật khẩu"
         style={styles.textInput}
+        errorTextStyles={styles.errorStyles}
       />
       <FormInput
         isSecure
@@ -41,6 +45,7 @@ const SignUpForm = ({isLoading, setModalPolicy, checkPolicy}) => {
         iconLeft={icons.auth_password}
         placeholder="Nhập lại mật khẩu"
         style={styles.textInput}
+        errorTextStyles={styles.errorStyles}
       />
 
       <Pressable onPress={setModalPolicy}>

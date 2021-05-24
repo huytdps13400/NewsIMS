@@ -7,6 +7,7 @@ import WebView from '@components/WebView';
 import FormInput from '@components/Form/FormInput';
 import TextInput from '@components/TextInput';
 import CheckBox from '@components/CheckBox';
+import FormContainer from '@components/Form/FormContainer';
 
 export {
   Block,
@@ -18,4 +19,5 @@ export {
   FormInput,
   TextInput,
   CheckBox,
+  FormContainer,
 };

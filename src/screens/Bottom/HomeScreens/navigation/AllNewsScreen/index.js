@@ -11,7 +11,7 @@ const AllNewsScreen = () => {
 
   return (
     <Block flex marginBottom={getSize.m(20)}>
-      <Header title="Tin thế giới" cangoBack />
+      <Header title="Tin thế giới" canGoBack />
       <FlatList
         showsVerticalScrollIndicator={false}
         removeClippedSubviews={true}

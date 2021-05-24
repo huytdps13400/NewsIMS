@@ -24,7 +24,7 @@ const SeenNews = () => {
   };
   return (
     <Block marginBottom={20} flex>
-      <Header title="Tin đã xem" cangoBack />
+      <Header title="Tin đã xem" canGoBack />
       <Block paddingHorizontal={12} flex>
         <FlatList
           showsVerticalScrollIndicator={false}
