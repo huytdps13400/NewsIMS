@@ -10,13 +10,14 @@ const ButtonUtility = ({icon, title, check, onPress}) => {
   return (
     <Pressable onPress={onPress}>
       <Block
-        borderBottomWidth={1}
-        borderColor={'#E4E4E4'}
-        paddingVertical={15}
         row
-        justifyCenter
-        space={'between'}>
-        <Block row>
+        alignCenter
+        borderBottomWidth={1}
+        paddingVertical={15}
+        space="between"
+        borderColor={'#E4E4E4'}
+        height={60}>
+        <Block row alignCenter>
           <Image source={icon} style={styles.icon} />
           <Text marginLeft={10} size={15} fontType={'medium'}>
             {title}

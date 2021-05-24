@@ -1,8 +1,8 @@
-import {Block, Text, Header} from '@components';
+import { Block, Text, Header } from '@components';
 import React from 'react';
-import {Pressable, Image} from 'react-native';
-import {icons} from '@assets';
-import {theme} from '@theme';
+import { Pressable, Image } from 'react-native';
+import { icons } from '@assets';
+import { theme } from '@theme';
 import styles from './styles';
 
 const HeaderNotification = () => {
@@ -11,10 +11,10 @@ const HeaderNotification = () => {
       shadow
       row
       justifyCenter
-      padding={20}
+      padding={12}
       backgroundColor={'#fff'}
       space={'between'}>
-      <Block row justifyCenter>
+      <Block row alignCenter>
         <Pressable>
           <Image
             resizeMode={'contain'}

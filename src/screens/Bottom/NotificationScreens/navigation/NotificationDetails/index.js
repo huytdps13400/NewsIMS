@@ -1,5 +1,5 @@
 import React from 'react';
-import {Block, Text, Header, WebView} from '@components';
+import { Block, Text, Header, iew } from '@components';
 
 const NotificationDetails = () => {
   return (
