@@ -6,12 +6,7 @@ export default StyleSheet.create({
   switch: {
     transform:
       Platform.OS === 'ios'
-        ? [
-            {scaleX: getSize.m(1, 1)},
-            {
-              scaleY: getSize.m(1, 1),
-            },
-          ]
+        ? [{scaleX: 0.8}, {scaleY: 0.8}]
         : [
             {scaleX: getSize.m(1, 0.1)},
             {

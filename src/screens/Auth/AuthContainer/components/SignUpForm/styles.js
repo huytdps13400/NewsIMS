@@ -5,9 +5,7 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   textInput: {
     height: getSize.s(45),
-    backgroundColor: theme.colors.white,
+    backgroundColor: theme.colors.smoke,
     marginTop: getSize.m(10),
-    borderWidth: 0.5,
-    borderColor: 'blue',
   },
 });

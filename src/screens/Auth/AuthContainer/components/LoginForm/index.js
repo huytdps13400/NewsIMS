@@ -1,13 +1,13 @@
 import {icons} from '@assets';
 import {Block, Button, CheckBox, FormInput, Text} from '@components';
-import {useNavigation} from '@react-navigation/core';
 import {getSize} from '@utils/responsive';
+import {useFormikContext} from 'formik';
 import React from 'react';
 import {Pressable} from 'react-native';
 import styles from './styles';
 
 const LoginForm = ({isLoading}) => {
-  const navigation = useNavigation();
+  const {handleSubmit} = useFormikContext();
 
   return (
     <Block paddingHorizontal={16} marginTop={10}>
@@ -40,7 +40,7 @@ const LoginForm = ({isLoading}) => {
           </Text>
         </Pressable>
       </Block>
-      <Button title="Đăng nhập" disabled={isLoading} />
+      <Button title="Đăng nhập" onPress={handleSubmit} disabled={isLoading} />
     </Block>
   );
 };

@@ -1,8 +1,8 @@
-import { Block, Text, Header } from '@components';
+import {icons} from '@assets';
+import {Block, Text} from '@components';
+import {theme} from '@theme';
 import React from 'react';
-import { Pressable, Image } from 'react-native';
-import { icons } from '@assets';
-import { theme } from '@theme';
+import {Image, Pressable} from 'react-native';
 import styles from './styles';
 
 const HeaderNotification = () => {
