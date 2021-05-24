@@ -1,9 +1,9 @@
 import {icons} from '@assets';
-import {Block, Text} from '@components';
+import React from 'react';
 import {theme} from '@theme';
+import {Block, Text} from '@components';
 import {getSize, height} from '@utils/responsive';
 import {Formik} from 'formik';
-import React from 'react';
 import {Image, Keyboard, Platform, Pressable} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import actions from 'redux/actions';
