@@ -2,6 +2,7 @@ import {icons} from '@assets';
 import {Block, Button, Header} from '@components';
 import {routes} from '@navigation/routes';
 import {useNavigation} from '@react-navigation/native';
+import {getSize, width} from '@utils/responsive';
 import actions from '@redux/actions';
 import Storage from '@utils/storage';
 import React from 'react';
@@ -31,13 +32,16 @@ const ProfileScreens = () => {
     <Block flex backgroundColor={'#fff'}>
       <Header />
       <HeaderProfile next />
+
       <Block
         shadow
         row
         flex
         alignCenter
         justifyCenter
-        padding={20}
+        width={width - 24}
+        padding={getSize.m(12)}
+        marginHorizontal={getSize.m(12)}
         radius={5}
         backgroundColor="white"
         space={'between'}
@@ -58,7 +62,7 @@ const ProfileScreens = () => {
           onPress={() => navigation.navigate(routes.SEENRNEWS)}
         />
       </Block>
-      <Block paddingHorizontal={20} marginTop={70}>
+      <Block paddingHorizontal={12} marginTop={70}>
         <ButtonUtility icon={icons.profile1} title={'Bật thông báo'} check />
 
         <ButtonUtility
@@ -78,7 +82,7 @@ const ProfileScreens = () => {
         />
         <Button
           style={styles.btnLogout}
-          title={'ĐANG XUẤT'}
+          title={'ĐĂNG XUẤT'}
           onPress={() => _handleLogOut()}
           disabled={isLoading}
         />

@@ -1,6 +1,5 @@
 import {Block, Text} from '@components';
-import {getSize} from '@utils/responsive';
-import React, {useState} from 'react';
+import React from 'react';
 import {FlatList, Image, Pressable} from 'react-native';
 import styles from './styles';
 
@@ -10,11 +9,11 @@ const Item = React.memo(({data, onPress}) => {
       <Pressable onPress={onPress}>
         <Block
           row
-          justifyCenter
-          padding={16}
+          alignCenter
+          padding={12}
           borderBottomWidth={1}
-          space={'between'}
-          borderColor={'#EAEAEA'}>
+          space="between"
+          borderColor="#EAEAEA">
           <Block width={'70%'} marginRight={20}>
             <Text numberOfLines={2} size={17} fontType="semibold">
               {item.title}
@@ -23,7 +22,7 @@ const Item = React.memo(({data, onPress}) => {
               {item.date}
             </Text>
           </Block>
-          <Block width={'30%'}>
+          <Block>
             <Image source={{uri: item.image}} style={styles.image} />
           </Block>
         </Block>

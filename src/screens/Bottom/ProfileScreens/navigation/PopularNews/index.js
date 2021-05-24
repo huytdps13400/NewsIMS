@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
-import {Image, FlatList} from 'react-native';
-import {Block, Text, Header} from '@components';
+import {Block, Header} from '@components';
 import ItemNews from '@components/Common/itemNews';
 import actions from '@redux/actions';
+import React, {useEffect} from 'react';
+import {FlatList} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 const PopularNews = () => {
