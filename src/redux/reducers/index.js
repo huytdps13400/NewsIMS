@@ -7,6 +7,7 @@ import {UserReducer} from './UserReducer';
 import {ConfigReducer} from './ConfigReducer';
 import {AddressReducer} from './AddressReducer';
 import {LocationReducer} from './LocationReducer';
+import {NotificationReducer} from './NotificationReducer';
 
 const rootReducer = combineReducers({
   ...TokenReducer,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   ...ConfigReducer,
   ...AddressReducer,
   ...LocationReducer,
+  ...NotificationReducer,
 });
 
 export default rootReducer;

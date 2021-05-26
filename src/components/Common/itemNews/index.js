@@ -22,7 +22,11 @@ const itemNews = React.memo(
               style={styles.styleimg}
             />
             <Block flex marginLeft={getSize.m(15)}>
-              <Text numberOfLines={2} marginTop={getSize.m(2)}>
+              <Text
+                numberOfLines={2}
+                marginTop={getSize.m(2)}
+                size={16}
+                fontType="semibold">
                 {title}
               </Text>
               <Text
