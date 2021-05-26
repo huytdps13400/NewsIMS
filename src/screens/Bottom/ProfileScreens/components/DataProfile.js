@@ -23,7 +23,7 @@ export const Data = [
   {
     image: icons.profile1,
     title: 'Bật thông báo',
-    navigation: routes.SYSTEM_NEWS,
+    navigation: '',
     params: {
       check: true,
     },
@@ -31,7 +31,7 @@ export const Data = [
   {
     image: icons.profile2,
     title: 'Tự động phát video',
-    navigation: routes.POPULAR_NEWS,
+    navigation: '',
     params: {
       check: true,
     },
