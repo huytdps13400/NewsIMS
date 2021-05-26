@@ -1,14 +1,15 @@
 import {icons} from '@assets';
 import {Block, Button, RadioButton, Text, TextInput} from '@components';
+import {useNavigation} from '@react-navigation/core';
 import actions from '@redux/actions';
 import {theme} from '@theme';
 import {width} from '@utils/responsive';
 import moment from 'moment';
 import React, {useState} from 'react';
 import {Image, Keyboard, Pressable} from 'react-native';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import {useDispatch, useSelector} from 'react-redux';
 import HeaderProfile from '../../components/HeaderProfile';
-import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import styles from './styles';
 const DATA = [
   {value: '0', label: 'nam'},
@@ -16,6 +17,7 @@ const DATA = [
 ];
 const ProfileDetails = ({route}) => {
   const dispatch = useDispatch();
+  const navigation = useNavigation();
   const {user} = route.params;
   const tokenUser = useSelector(state => state.tokenUser.data);
   const [isDatePicker, setIsDatePicker] = useState(false);
@@ -107,7 +109,7 @@ const ProfileDetails = ({route}) => {
         </Block>
 
         <Pressable
-          row
+          flexDirection="row"
           alignCenter
           borderBottomWidth={1}
           borderBottomColor={theme.colors.smoke}
@@ -120,36 +122,38 @@ const ProfileDetails = ({route}) => {
             style={styles.imageTitle}
           />
           <Text marginLeft={5}>Ngày sinh</Text>
-          <Pressable
-            onPress={() => setIsDatePicker(true)}
-            style={styles.birthday}>
-            <Text color="placeholder" marginLeft={5}>
-              {birthday
-                ? moment(birthday * 1000).format('DD/MM/YYYY')
-                : 'Chưa cập nhật'}
-            </Text>
-          </Pressable>
+
+          <Text color="placeholder" marginLeft={5}>
+            {birthday
+              ? moment(birthday * 1000).format('DD/MM/YYYY')
+              : 'Chưa cập nhật'}
+          </Text>
         </Pressable>
 
-        <Block
-          row
+        {/* <Pressable
+          flexDirection="row"
           alignCenter
           borderBottomWidth={1}
           borderBottomColor={theme.colors.smoke}
           paddingBottom={10}
-          paddingTop={30}>
-          <TextInput
-            iconLeft={icons.profile8}
-            style={styles.inputWrap}
-            inputStyle={styles.input}
-            containerStyle={styles.container}
-            testLeft={'Thành phố:  '}
-            placeholder={user.address ? user.address : 'Chưa cập nhật'}
-            keyboardType="phone-pad"
-            value={city}
-            onChangeText={text => setCity(text)}
+          paddingTop={30}
+          onPress={() =>
+            navigation.navigate(routes.ADDRESS_DETAILS, {
+              city: city,
+              setCity: setCity,
+            })
+          }>
+          <Image
+            source={icons.profile8}
+            resizeMode="contain"
+            style={styles.imageTitle}
           />
-        </Block>
+          <Text marginLeft={5}>Thành phố:</Text>
+          <Text color="placeholder" marginLeft={5}>
+            {city ? city : 'Chưa cập nhật'}
+          </Text>
+        </Pressable> */}
+
         <Block
           row
           alignCenter

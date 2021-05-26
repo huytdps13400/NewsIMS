@@ -2,10 +2,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import {StatusBar} from 'react-native';
+import {auth} from '../screens/Auth';
+import {bottom} from '../screens/Bottom';
 import BottomTabNavigation from './BottomTabNavigation';
 import {navigate} from './RootNavigation';
-import {bottom} from '../screens/Bottom';
-import {auth} from '../screens/Auth';
 import {routes} from './routes';
 
 const Stack = createStackNavigator();
@@ -68,6 +68,10 @@ const RootStack = () => {
         <Stack.Screen
           name={routes.WATCHED_NEWS}
           component={bottom.WATCHED_NEWS}
+        />
+        <Stack.Screen
+          name={routes.ADDRESS_DETAILS}
+          component={bottom.ADDRESS_DETAILS}
         />
       </Stack.Navigator>
     </NavigationContainer>
