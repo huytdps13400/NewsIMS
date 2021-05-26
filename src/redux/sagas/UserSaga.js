@@ -1,8 +1,10 @@
+import {goBack} from '@navigation/RootNavigation';
 import API from '@utils/api';
 import {hanldeErrorCode} from '@utils/handleErrorCode';
+import {CustomToast} from '@utils/helper';
 import Storage from '@utils/storage';
 import queryString from 'query-string';
-import {put, takeLatest} from 'redux-saga/effects';
+import {call, put, takeLatest} from 'redux-saga/effects';
 import Actions, {_onFail, _onSuccess, _onUnmount} from '../actions';
 
 function* login(actions) {
@@ -52,6 +54,30 @@ function* getUser(actions) {
   }
 }
 
+function* updateUser(actions) {
+  try {
+    const res = yield API.postFormData(
+      `updateUser?user=${actions.user}`,
+      actions.formData,
+    );
+    yield put({
+      type: _onSuccess(Actions.UPDATE_USER_INFORMATION),
+      data: res.data,
+    });
+    yield put({
+      type: Actions.GET_USER_INFORMATION,
+      params: {
+        user: actions.user,
+      },
+    });
+    CustomToast('Cập nhật thành công');
+    yield actions.goBack && call(() => goBack());
+  } catch (error) {
+    yield put({type: _onFail(Actions.UPDATE_USER_INFORMATION)});
+    hanldeErrorCode(error);
+  }
+}
+
 function* logOut(actions) {
   try {
     yield API.get('logoutUser', actions.params);
@@ -61,6 +87,17 @@ function* logOut(actions) {
     Storage.removeItem('TOKEN_USER');
   } catch (error) {
     yield put({type: _onFail(Actions.LOGOUT_ACCOUNT)});
+    hanldeErrorCode(error);
+  }
+}
+
+function* updatePassUser(actions) {
+  try {
+    const body = queryString.stringify(actions.body);
+    yield API.post('updatePassword', body, actions.params);
+    yield put({type: _onSuccess(Actions.UPDATE_PASS_USER)});
+  } catch (error) {
+    yield put({type: _onFail(Actions.UPDATE_PASS_USER)});
     hanldeErrorCode(error);
   }
 }
@@ -79,6 +116,8 @@ export function* watchUserSagas() {
   yield takeLatest(Actions.LOGIN_ACCOUNT, login);
   yield takeLatest(Actions.SIGNUP_ACCOUNT, signUp);
   yield takeLatest(Actions.GET_USER_INFORMATION, getUser);
+  yield takeLatest(Actions.UPDATE_USER_INFORMATION, updateUser);
   yield takeLatest(Actions.LOGOUT_ACCOUNT, logOut);
+  yield takeLatest(Actions.UPDATE_PASS_USER, updatePassUser);
   yield takeLatest(Actions.FORGET_PASS_USER, forgetPasUser);
 }

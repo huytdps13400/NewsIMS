@@ -1,15 +1,13 @@
-import {icons} from '@assets';
-import {Block, Button, Header} from '@components';
-import {routes} from '@navigation/routes';
+import {Block, Button} from '@components';
 import {useNavigation} from '@react-navigation/native';
 import actions from '@redux/actions';
-import {getSize, width} from '@utils/responsive';
+import {width} from '@utils/responsive';
 import Storage from '@utils/storage';
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import ButtonProfile from './components/ButtonProfile';
 import ButtonUtility from './components/ButtonUtility';
-import {DataMenu, Data} from './components/DataProfile';
+import {Data, DataMenu} from './components/DataProfile';
 import HeaderProfile from './components/HeaderProfile';
 import styles from './styles';
 
@@ -31,6 +29,7 @@ const ProfileScreens = () => {
 
   const _renderMenu = (item, index) => (
     <ButtonProfile
+      key={index}
       image={item.image}
       title={item.title}
       onPress={() => navigation.navigate(item.navigation)}
@@ -38,6 +37,7 @@ const ProfileScreens = () => {
   );
   const _renderItem = (item, index) => (
     <ButtonUtility
+      key={index}
       icon={item.image}
       title={item.title}
       check={item.params}
@@ -46,21 +46,20 @@ const ProfileScreens = () => {
   );
 
   return (
-    <Block flex backgroundColor={'#fff'}>
-      <Header />
+    <Block flex backgroundColor="white">
       <HeaderProfile next />
       <Block
-        shadow
         row
-        flex
+        shadow
         alignCenter
-        justifyCenter
         width={width - 24}
         padding={12}
         radius={5}
         backgroundColor="white"
         space={'between'}
-        style={styles.container}>
+        absolute
+        top={width / 2.2}
+        alignSelf="center">
         {DataMenu.map(_renderMenu)}
       </Block>
       <Block paddingHorizontal={12} marginTop={70}>

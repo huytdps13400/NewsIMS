@@ -33,6 +33,7 @@
     "hooks": "^0.3.2",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
+    "moment": "^2.29.1",
     "query-string": "^7.0.0",
     "react": "17.0.1",
     "react-native": "0.64.1",

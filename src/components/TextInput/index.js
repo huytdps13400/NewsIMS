@@ -9,6 +9,8 @@ import styles from './styles';
 const InputText = ({
   setRef,
   iconLeft,
+  testLeft,
+  testStyle,
   placeholder,
   keyboardType,
   onChangeText,
@@ -66,16 +68,26 @@ const InputText = ({
         borderWidth={0.5}
         borderColor={isError ? ColorErr : ColorNotErr}
         style={style}>
-        {iconLeft && (
-          <Image
-            source={iconLeft}
-            resizeMode={'contain'}
-            style={{
-              ...styles.iconLeft,
-              tintColor: isError ? theme.colors.red : theme.colors.grays,
-            }}
-          />
-        )}
+        {testLeft || iconLeft ? (
+          <Block row alignCenter>
+            {iconLeft && (
+              <Image
+                source={iconLeft}
+                resizeMode={'contain'}
+                style={{
+                  ...styles.iconLeft,
+                  tintColor: isError ? theme.colors.red : theme.colors.grays,
+                }}
+              />
+            )}
+            <Text
+              style={{
+                ...testStyle,
+              }}>
+              {testLeft}
+            </Text>
+          </Block>
+        ) : null}
         <TextInput
           ref={setRef}
           style={{flex: 1, ...inputStyle}}
