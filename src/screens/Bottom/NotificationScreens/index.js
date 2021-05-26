@@ -1,88 +1,84 @@
-import {Block, Text, Header} from '@components';
-import React from 'react';
-import {Pressable, Image, ScrollView} from 'react-native';
-import {icons} from '@assets';
-import {theme} from '@theme';
-import HeaderNotification from './components/HeaderNotification';
-import Item from './components/Item';
+import {Block, Button, Header, Text} from '@components';
 import {routes} from '@navigation/routes';
 import {useNavigation} from '@react-navigation/native';
-const data = [
-  {
-    id: '1',
-    image:
-      'https://discoverasia.com.au/wp-content/uploads/2019/02/Hot-air-balloon-over-Nam-Song-river-at-sunset-in-Vang-vieng-Laos-Discover-Laos-Discover-Asia.jpg',
-    title: 'Những mũi vaccine phòng COVID-19 đầu tiên dành cho y bác',
-    date: 'Tin hot - 08/03/2021',
-  },
-  {
-    id: '2',
-    image:
-      'https://moroccodreamblog.files.wordpress.com/2014/11/aldous-huxley-to-travel-is-to-discover-that-everyone-is-wrong-about-other-countries.jpg',
-    title:
-      'Đợt tiêm vaccine phòng COVID-19 lần này là khởi đầu cho chiến dịch ',
-    date: 'Tin hot - 08/03/2021',
-  },
-  {
-    id: '3',
-    image:
-      'https://sundayinwonderland.com/wp-content/uploads/2019/01/Explore_the_unexplored_01.jpg',
-    title:
-      'Đợt tiêm vaccine phòng COVID-19 lần này là khởi đầu cho chiến dịch ',
-    date: 'Tin hot - 08/03/2021',
-  },
-  {
-    id: '4',
-    image:
-      'https://sundayinwonderland.com/wp-content/uploads/2019/01/Explore_the_unexplored_01.jpg',
-    title:
-      'Đợt tiêm vaccine phòng COVID-19 lần này là khởi đầu cho chiến dịch ',
-    date: 'Tin hot - 08/03/2021',
-  },
-  {
-    id: '5',
-    image:
-      'https://discoverasia.com.au/wp-content/uploads/2019/02/Hot-air-balloon-over-Nam-Song-river-at-sunset-in-Vang-vieng-Laos-Discover-Laos-Discover-Asia.jpg',
-    title:
-      'Đợt tiêm vaccine phòng COVID-19 lần này là khởi đầu cho chiến dịch ',
-    date: 'Tin hot - 08/03/2021',
-  },
-  {
-    id: '6',
-    image:
-      'https://moroccodreamblog.files.wordpress.com/2014/11/aldous-huxley-to-travel-is-to-discover-that-everyone-is-wrong-about-other-countries.jpg',
-    title:
-      'Đợt tiêm vaccine phòng COVID-19 lần này là khởi đầu cho chiến dịch ',
-    date: 'Tin hot - 08/03/2021',
-  },
-  {
-    id: '7',
-    image:
-      'https://sundayinwonderland.com/wp-content/uploads/2019/01/Explore_the_unexplored_01.jpg',
-    title: 'Những mũi vaccine phòng COVID-19 đầu tiên dành cho y bác',
-    date: 'Tin hot - 08/03/2021',
-  },
-  {
-    id: '8',
-    image:
-      'https://discoverasia.com.au/wp-content/uploads/2019/02/Hot-air-balloon-over-Nam-Song-river-at-sunset-in-Vang-vieng-Laos-Discover-Laos-Discover-Asia.jpg',
-    title:
-      'Đợt tiêm vaccine phòng COVID-19 lần này là khởi đầu cho chiến dịch ',
-    date: 'Tin hot - 08/03/2021',
-  },
-];
+import actions from '@redux/actions';
+import {width} from '@utils/responsive';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import HeaderNotification from './components/HeaderNotification';
+import Item from './components/Item';
+
 const NotificationScreens = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+  const {data, totalPage} = useSelector(state => state.notification);
+  const user = useSelector(state => state.tokenUser.data);
+  const [refreshing, setRefreshing] = useState(false);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    user &&
+      dispatch({
+        type: actions.GET_NOTIFICATION,
+        params: {user, p: 1, numshow: 12},
+      });
+  }, [dispatch, user]);
+
+  const _loadMore = () => {
+    if (page < totalPage) {
+      setPage(page + 1);
+      dispatch({
+        type: actions.GET_NOTIFICATION,
+        isLoadMore: true,
+        params: {
+          user,
+          p: page + 1,
+          numshow: 12,
+        },
+      });
+    }
+  };
+
+  const _onRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1000);
+    setPage(1);
+    dispatch({
+      type: actions.GET_NOTIFICATION,
+      params: {
+        user,
+        p: 1,
+        numshow: 12,
+      },
+    });
+  };
+
   return (
     <Block flex>
       <Header title={'Thông báo'} />
-      <HeaderNotification />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <Item
-          data={data}
-          onPress={() => navigation.navigate(routes.NOTIFICATION_DETAILS)}
-        />
-      </ScrollView>
+      {user ? (
+        <Block flex>
+          <HeaderNotification />
+          <Item
+            data={data}
+            onPress={() => navigation.navigate(routes.NOTIFICATION_DETAILS)}
+            _onRefresh={_onRefresh}
+            _loadMore={_loadMore}
+            refreshing={refreshing}
+          />
+        </Block>
+      ) : (
+        <Block flex alignCenter justifyCenter>
+          <Text>Vui lòng đăng nhập để nhận thông báo</Text>
+          <Button
+            title="ĐĂNG NHẬP NGAY"
+            style={{width: width * 0.8}}
+            onPress={() => navigation.navigate(routes.PROFILE_SCREENS)}
+          />
+        </Block>
+      )}
     </Block>
   );
 };

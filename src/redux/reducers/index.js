@@ -5,6 +5,7 @@ import {PageByIDReducer} from './PageByIDReducer';
 import {TokenReducer} from './TokenReducer';
 import {UserReducer} from './UserReducer';
 import {ConfigReducer} from './ConfigReducer';
+import {NotificationReducer} from './NotificationReducer';
 
 const rootReducer = combineReducers({
   ...TokenReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   ...UserReducer,
   ...DeviceReducer,
   ...ConfigReducer,
+  ...NotificationReducer,
 });
 
 export default rootReducer;
