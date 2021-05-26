@@ -5,26 +5,33 @@ import {theme} from '@theme';
 import {width} from '@utils/responsive';
 import moment from 'moment';
 import React, {useState} from 'react';
-import {Image, Keyboard} from 'react-native';
+import {Image, Keyboard, Pressable} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import HeaderProfile from '../../components/HeaderProfile';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import styles from './styles';
 const DATA = [
   {value: '0', label: 'nam'},
   {value: '1', label: 'nữ'},
 ];
 const ProfileDetails = ({route}) => {
+  const dispatch = useDispatch();
   const {user} = route.params;
   const tokenUser = useSelector(state => state.tokenUser.data);
-  const dispatch = useDispatch();
+  const [isDatePicker, setIsDatePicker] = useState(false);
 
-  const [marital, setMarital] = useState('');
-  const [phone, setPhone] = useState('');
-  const [fullName, setfullName] = useState('');
-  const [email] = useState('');
-  const [gender, setGender] = useState('');
-  const [birthday, setBirthday] = useState('');
-  const [city, setCity] = useState('');
+  const [marital, setMarital] = useState(user.marital);
+  const [phone, setPhone] = useState(user.phone);
+  const [fullName, setfullName] = useState(user.full_name);
+  const [email] = useState(user.email);
+  const [gender, setGender] = useState(user.gender);
+  const [birthday, setBirthday] = useState(user.birthday);
+  const [city, setCity] = useState(user.city);
+
+  const _onConfirmDate = date => {
+    setBirthday(date / 1000);
+    setIsDatePicker(false);
+  };
 
   const _onConfirmInfo = () => {
     Keyboard.dismiss();
@@ -96,33 +103,34 @@ const ProfileDetails = ({route}) => {
             style={styles.imageTitle}
           />
           <Text marginLeft={5}>Giới tính</Text>
-          <RadioButton
-            itemStyle={styles.radioBtn}
-            data={DATA}
-            selected={gender}
-            setSelected={setGender}
-          />
+          <RadioButton data={DATA} selected={gender} setSelected={setGender} />
         </Block>
 
-        <Block
+        <Pressable
           row
           alignCenter
           borderBottomWidth={1}
           borderBottomColor={theme.colors.smoke}
           paddingBottom={10}
-          paddingTop={30}>
-          <TextInput
-            iconLeft={icons.profile7}
-            style={styles.inputWrap}
-            inputStyle={styles.input}
-            containerStyle={styles.container}
-            testLeft={'Ngày sinh: '}
-            placeholder={moment(user.birthday * 1000).format('DD/MM/YYYY')}
-            keyboardType="phone-pad"
-            value={birthday}
-            onChangeText={text => setBirthday(text)}
+          paddingTop={30}
+          onPress={() => setIsDatePicker(true)}>
+          <Image
+            source={icons.profile7}
+            resizeMode="contain"
+            style={styles.imageTitle}
           />
-        </Block>
+          <Text marginLeft={5}>Ngày sinh</Text>
+          <Pressable
+            onPress={() => setIsDatePicker(true)}
+            style={styles.birthday}>
+            <Text color="placeholder" marginLeft={5}>
+              {birthday
+                ? moment(birthday * 1000).format('DD/MM/YYYY')
+                : 'Chưa cập nhật'}
+            </Text>
+          </Pressable>
+        </Pressable>
+
         <Block
           row
           alignCenter
@@ -187,6 +195,14 @@ const ProfileDetails = ({route}) => {
           title={'Cập nhật tài khoản'}
         />
       </Block>
+      <DateTimePickerModal
+        mode="date"
+        locale="vi_VN"
+        headerTextIOS={'Ngày sinh'}
+        isVisible={isDatePicker}
+        onConfirm={_onConfirmDate}
+        onCancel={() => setIsDatePicker(false)}
+      />
     </Block>
   );
 };

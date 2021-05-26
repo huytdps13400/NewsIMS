@@ -18,4 +18,9 @@ export default StyleSheet.create({
   container: {
     flex: 1,
   },
+  birthday: {
+    paddingVertical: getSize.m(10),
+    borderBottomWidth: getSize.m(1),
+    borderBottomColor: theme.colors.smoke,
+  },
 });
