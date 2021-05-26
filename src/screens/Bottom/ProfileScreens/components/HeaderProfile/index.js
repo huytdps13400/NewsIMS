@@ -2,37 +2,46 @@ import {icons} from '@assets';
 import {Block, Text} from '@components';
 import {routes} from '@navigation/routes';
 import {useNavigation} from '@react-navigation/native';
-import {getSize} from '@utils/responsive';
 import React from 'react';
 import {Image, Pressable} from 'react-native';
+import {useSelector} from 'react-redux';
 import styles from './styles';
-const HeaderProfile = ({next}) => {
+
+const HeaderProfile = ({next, canGoBack}) => {
   const navigation = useNavigation();
+  const user = useSelector(state => state.userInfo).data;
+
   return (
-    <Block
-      alignCenter
-      justifyCenter
-      row
-      paddingHorizontal={33}
-      paddingBottom={getSize.m(80)}
-      space="between"
-      backgroundColor="#0088EE">
-      <Block row justifyCenter space={'between'}>
-        <Block justifyCenter space={'between'}>
-          <Image source={icons.avatar} style={styles.imgAvatar} />
+    <Block row alignCenter paddingVertical={70} backgroundColor="#0088EE">
+      {canGoBack && (
+        <Pressable style={styles.btnback} onPress={() => navigation.goBack()}>
+          <Image source={icons.back} style={styles.icoBack} />
+        </Pressable>
+      )}
+      <Block row alignCenter justifyCenter marginHorizontal={12}>
+        <Block
+          borderWidth={4}
+          borderColor="smoke"
+          backgroundColor="red"
+          radius={50}
+          justifyCenter>
+          <Image source={{uri: user?.picture}} style={styles.imgAvatar} />
           <Image source={icons.camera} style={styles.imgCamera} />
         </Block>
-        <Block marginLeft={14} paddingVertical={6}>
+        <Block marginHorizontal={20}>
           <Text size={16} color={'#fff'} fontType="bold">
-            Lê Ngọc Luân
+            {user?.full_name}
           </Text>
           <Text size={14} color={'#fff'} fontType="semibold">
-            lengocluan1991@gmail.com
+            {user?.email}
           </Text>
         </Block>
       </Block>
       {next ? (
-        <Pressable onPress={() => navigation.navigate(routes.PROFILEDETAILS)}>
+        <Pressable
+          onPress={() =>
+            navigation.navigate(routes.PROFILE_DETAILS, {user: user})
+          }>
           <Image style={styles.imgNext} source={icons.next} />
         </Pressable>
       ) : null}

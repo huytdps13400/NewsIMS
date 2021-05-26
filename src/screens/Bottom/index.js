@@ -7,23 +7,23 @@ import ProfileDetails from './ProfileScreens/navigation/ProfileDetails';
 import AllNewsScreen from './HomeScreens/navigation/AllNewsScreen';
 import SystemNews from './ProfileScreens/navigation/SystemNews';
 import PopularNews from './ProfileScreens/navigation/PopularNews';
-import SeenNews from './ProfileScreens/navigation/SeenNews';
+import WatchedNews from './ProfileScreens/navigation/SeenNews';
 import NewsDetails from './Common/NewsDetails';
 import NotificationDetails from './NotificationScreens/navigation/NotificationDetails';
-import Termsofuse from './ProfileScreens/navigation/Termsofuse';
+import TermsOfUse from './ProfileScreens/navigation/Termsofuse';
 
 export const bottom = {
-  HOMESCREENS: HomeScreens,
-  TENDENCYSCREENS: TendencyScreens,
-  DISCOVERSCREENS: DiscoverScreens,
-  NOTIFICATIONSCREENS: NotificationScreens,
-  PROFILESCREENS: ProfileScreens,
-  PROFILEDETAILS: ProfileDetails,
-  ALLNEWSSCREEN: AllNewsScreen,
-  SYSTEMNEWS: SystemNews,
-  POPULARNEWS: PopularNews,
-  SEENNEWS: SeenNews,
-  NEWSDETAILS: NewsDetails,
-  NOTIFICATIONDETAILS: NotificationDetails,
-  TERMSOFUSE: Termsofuse,
+  HOME_SCREENS: HomeScreens,
+  TENDENCY_SCREENS: TendencyScreens,
+  DISCOVER_SCREENS: DiscoverScreens,
+  NOTIFICATION_SCREENS: NotificationScreens,
+  PROFILE_SCREENS: ProfileScreens,
+  PROFILE_DETAILS: ProfileDetails,
+  ALL_NEWS_SCREEN: AllNewsScreen,
+  SYSTEM_NEWS: SystemNews,
+  POPULAR_NEWS: PopularNews,
+  WATCHED_NEWS: WatchedNews,
+  NEWS_DETAILS: NewsDetails,
+  NOTIFICATION_DETAILS: NotificationDetails,
+  TERMS_OF_USE: TermsOfUse,
 };

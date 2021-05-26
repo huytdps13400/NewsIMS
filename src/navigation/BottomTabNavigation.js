@@ -14,29 +14,29 @@ const BottomTabNavigation = () => {
   return (
     <Tab.Navigator tabBar={props => <CustomTabBar {...props} />}>
       <Tab.Screen
-        name={routes.HOMESCREENS}
-        component={bottom.HOMESCREENS}
+        name={routes.HOME_SCREENS}
+        component={bottom.HOME_SCREENS}
         options={{
           tabBarLabel: 'Tin của bạn',
         }}
       />
       <Tab.Screen
-        name={routes.TENDENCYSCREENS}
-        component={bottom.TENDENCYSCREENS}
+        name={routes.TENDENCY_SCREENS}
+        component={bottom.TENDENCY_SCREENS}
         options={{
           tabBarLabel: 'Xu hướng',
         }}
       />
       <Tab.Screen
-        name={routes.DISCOVERSCREENS}
-        component={bottom.DISCOVERSCREENS}
+        name={routes.DISCOVER_SCREENS}
+        component={bottom.DISCOVER_SCREENS}
         options={{
           tabBarLabel: 'Khám phá',
         }}
       />
       <Tab.Screen
-        name={routes.NOTIFICATIONSCREENS}
-        component={bottom.NOTIFICATIONSCREENS}
+        name={routes.NOTIFICATION_SCREENS}
+        component={bottom.NOTIFICATION_SCREENS}
         options={{
           tabBarLabel: 'Thông báo',
         }}
@@ -44,15 +44,15 @@ const BottomTabNavigation = () => {
 
       {user ? (
         <Tab.Screen
-          name={routes.PROFILESCREENS}
-          component={bottom.PROFILESCREENS}
+          name={routes.PROFILE_SCREENS}
+          component={bottom.PROFILE_SCREENS}
           options={{
             tabBarLabel: 'Tài khoản',
           }}
         />
       ) : (
         <Tab.Screen
-          name={routes.PROFILESCREENS}
+          name={routes.PROFILE_SCREENS}
           component={auth.AUTH_CONTAINER}
           options={{tabBarLabel: 'Tài khoản'}}
         />

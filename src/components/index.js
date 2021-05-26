@@ -9,6 +9,7 @@ import TextInput from '@components/TextInput';
 import CheckBox from '@components/CheckBox';
 import FormContainer from '@components/Form/FormContainer';
 import Loading from '@components/Common/Loading';
+import RadioButton from '@components/RadioButton';
 
 export {
   Block,
@@ -22,4 +23,5 @@ export {
   CheckBox,
   FormContainer,
   Loading,
+  RadioButton,
 };

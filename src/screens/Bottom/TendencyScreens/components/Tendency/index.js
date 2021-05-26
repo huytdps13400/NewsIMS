@@ -70,7 +70,7 @@ const Tendency = ({
       </Block>
       <Block paddingHorizontal={getSize.m(12)}>
         {onebox && (
-          <Pressable onPress={() => navigation.navigate(routes.NEWSDETAILS)}>
+          <Pressable onPress={() => navigation.navigate(routes.NEWS_DETAILS)}>
             <Block row marginTop={getSize.m(20)}>
               <Image
                 source={{
@@ -91,7 +91,7 @@ const Tendency = ({
           </Pressable>
         )}
         {threebox && (
-          <Pressable onPress={() => navigation.navigate(routes.NEWSDETAILS)}>
+          <Pressable onPress={() => navigation.navigate(routes.NEWS_DETAILS)}>
             <Block marginBottom={getSize.m(10)}>
               <Block row alignCenter marginTop={getSize.m(10)}>
                 <Image
