@@ -6,7 +6,7 @@ export default StyleSheet.create({
   imgAvatar: {
     width: getSize.s(70),
     height: getSize.s(70),
-    resizeMode: 'contain',
+
     borderRadius: 50,
   },
   imgCamera: {

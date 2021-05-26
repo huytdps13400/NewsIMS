@@ -7,7 +7,6 @@ export default StyleSheet.create({
     width: getSize.s(17),
     height: getSize.s(17),
   },
-
   inputWrap: {
     paddingHorizontal: 0,
     borderRadius: 0,

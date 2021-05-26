@@ -23,10 +23,13 @@ const HeaderProfile = ({next, canGoBack}) => {
           borderWidth={4}
           borderColor="smoke"
           backgroundColor="red"
-          radius={50}
-          justifyCenter>
+          radius={50}>
           <Image source={{uri: user?.picture}} style={styles.imgAvatar} />
-          <Image source={icons.camera} style={styles.imgCamera} />
+          <Image
+            source={icons.camera}
+            style={styles.imgCamera}
+            resizeMode="contain"
+          />
         </Block>
         <Block marginHorizontal={20}>
           <Text size={16} color={'#fff'} fontType="bold">
