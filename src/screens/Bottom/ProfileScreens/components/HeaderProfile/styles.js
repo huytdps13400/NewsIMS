@@ -21,12 +21,11 @@ export default StyleSheet.create({
   imgNext: {
     width: getSize.s(26),
     height: getSize.s(26),
-    resizeMode: 'contain',
   },
   icoBack: {
     height: getSize.s(20),
     width: getSize.s(20),
-    resizeMode: 'contain',
+
     tintColor: theme.colors.white,
   },
   btnback: {

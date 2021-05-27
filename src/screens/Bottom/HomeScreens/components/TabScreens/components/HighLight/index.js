@@ -1,6 +1,6 @@
 import {Block, Text} from '@components';
 import {theme} from '@theme';
-import {getSize, width} from '@utils/responsive';
+import {width} from '@utils/responsive';
 import React from 'react';
 import {FlatList, Image} from 'react-native';
 import styles from './styles';
@@ -42,7 +42,7 @@ const HighLight = () => {
           }}
           style={styles.imgstyle}
         />
-        <Text size={16} numberOfLines={3} marginTop={getSize.m(5)}>
+        <Text size={16} numberOfLines={3} marginTop={5}>
           {item.title}
         </Text>
         <Text color={theme.colors.lightGray}>Xã hội</Text>

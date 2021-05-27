@@ -28,7 +28,7 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
   return (
     <Block
       row
-      backgroundColor="#fff"
+      backgroundColor={theme.colors.white}
       paddingBottom={Platform.OS === 'ios' ? bottom : 10}
       paddingTop={10}>
       {state.routes.map((route, index) => {
