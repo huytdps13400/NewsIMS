@@ -12,12 +12,12 @@ const HeaderNotification = () => {
       row
       justifyCenter
       padding={12}
-      backgroundColor={'#fff'}
-      space={'between'}>
+      backgroundColor={theme.colors.white}
+      space="between">
       <Block row alignCenter>
         <Pressable>
           <Image
-            resizeMode={'contain'}
+            resizeMode="contain"
             source={icons.square}
             style={styles.image1}
           />
@@ -31,12 +31,16 @@ const HeaderNotification = () => {
         </Pressable>
         <Pressable>
           <Image
-            resizeMode={'contain'}
+            resizeMode="contain"
             source={icons.refresh}
             style={styles.image3}
           />
         </Pressable>
-        <Text marginLeft={17} size={14} color={'#2374DF'} fontType="semibold">
+        <Text
+          marginLeft={17}
+          size={14}
+          color={theme.colors.blueHeader}
+          fontType="semibold">
           Đánh dấu là đã đọc
         </Text>
       </Block>
@@ -48,10 +52,10 @@ const HeaderNotification = () => {
           radius={10}
           width={20}
           height={20}
-          borderColor={'#C9C9C9'}
+          borderColor={theme.col}
           backgroundColor={theme.colors.smoke}>
           <Image
-            resizeMode={'contain'}
+            resizeMode="contain"
             source={icons.dot}
             style={styles.imgItem}
           />

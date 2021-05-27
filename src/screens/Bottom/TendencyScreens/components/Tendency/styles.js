@@ -3,9 +3,8 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   icon: {
-    width: 12,
-    height: 12,
-    resizeMode: 'contain',
+    width: getSize.s(12),
+    height: getSize.s(12),
   },
   imgstyle: {
     width: (width - 36) / 3,

@@ -1,4 +1,5 @@
 import {Block, Text} from '@components';
+import {theme} from '@theme';
 import React from 'react';
 import {FlatList, Image, Pressable} from 'react-native';
 import styles from './styles';
@@ -14,7 +15,7 @@ const Item = React.memo(
             padding={12}
             borderBottomWidth={1}
             space="between"
-            borderColor="#EAEAEA">
+            borderColor={theme.colors.whiteGray}>
             <Block width={'70%'} marginRight={20}>
               <Text numberOfLines={2} size={17} fontType="semibold">
                 {item.title}
