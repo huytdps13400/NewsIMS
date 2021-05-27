@@ -13,19 +13,20 @@ const ButtonUtility = ({icon, title, check, onPress}) => {
       <Block
         row
         alignCenter
+        height={60}
         borderBottomWidth={1}
         paddingVertical={15}
         space="between"
-        borderColor={theme.colors.whiteGray}
-        height={60}>
+        borderColor={theme.colors.whiteGray}>
         <Block row alignCenter>
           <Image source={icon} style={styles.icon} />
-          <Text marginLeft={10} size={15} fontType={'medium'}>
+          <Text size={15} marginLeft={10} fontType={'medium'}>
             {title}
           </Text>
         </Block>
         {check ? (
           <Switch
+            resizeMode="contain"
             trackColor={{
               false: theme.colors.blueHeader,
               true: theme.colors.gray,
@@ -39,7 +40,11 @@ const ButtonUtility = ({icon, title, check, onPress}) => {
             style={styles.switch}
           />
         ) : (
-          <Image source={icons.next_right} style={styles.icon_next} />
+          <Image
+            resizeMode="contain"
+            source={icons.next_right}
+            style={styles.icon_next}
+          />
         )}
       </Block>
     </Pressable>

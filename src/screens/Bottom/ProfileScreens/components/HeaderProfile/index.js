@@ -21,7 +21,11 @@ const HeaderProfile = ({next, canGoBack, setIsVisible}) => {
       backgroundColor={theme.colors.blueHeader}>
       {canGoBack && (
         <Pressable style={styles.btnback} onPress={() => navigation.goBack()}>
-          <Image source={icons.back} style={styles.icoBack} />
+          <Image
+            resizeMode="contain"
+            source={icons.back}
+            style={styles.icoBack}
+          />
         </Pressable>
       )}
       <Block row alignCenter justifyCenter marginHorizontal={12}>
@@ -51,7 +55,11 @@ const HeaderProfile = ({next, canGoBack, setIsVisible}) => {
           onPress={() =>
             navigation.navigate(routes.PROFILE_DETAILS, {user: user})
           }>
-          <Image style={styles.imgNext} source={icons.next} />
+          <Image
+            resizeMode="contain"
+            style={styles.imgNext}
+            source={icons.next}
+          />
         </Pressable>
       )}
     </Block>

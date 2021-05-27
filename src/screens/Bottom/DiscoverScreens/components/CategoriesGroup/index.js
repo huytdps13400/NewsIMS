@@ -7,7 +7,7 @@ import styles from './styles';
 const CategoriesGroup = React.memo(({data}) => {
   const _renderItem = ({item}) => (
     <Pressable>
-      <Block alignCenter width={width / 5} marginRight={13} radius={10}>
+      <Block alignCenter marginRight={13} radius={10} width={width / 5}>
         <Image style={styles.image} source={{uri: item.image}} />
         <Text marginTop={10} center size={14}>
           {item.title}
