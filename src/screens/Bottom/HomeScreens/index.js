@@ -1,5 +1,6 @@
 import {Block, Header} from '@components';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {theme} from '@theme';
 import React from 'react';
 import TabScreens from './components/TabScreens';
 import TopTabBar from './components/TabScreens/CustomTabbar';
@@ -35,7 +36,9 @@ const HomeScreens = () => {
       <Header type="Home" />
       <Tab.Navigator
         lazy
-        tabBar={props => <TopTabBar {...props} inactiveTintColor={'#000'} />}>
+        tabBar={props => (
+          <TopTabBar {...props} inactiveTintColor={theme.colors.white} />
+        )}>
         {DATATAB.map(item => {
           return (
             <Tab.Screen name={item.title} key={item.id}>

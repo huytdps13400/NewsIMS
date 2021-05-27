@@ -37,7 +37,7 @@ const Tendency = ({
         />
         <Block row alignCenter marginTop={getSize.m(10)}>
           <Block justifyCenter>
-            <Text color={'#2B80EF'}>1.</Text>
+            <Text color={theme.colors.blueHeader}>1.</Text>
           </Block>
 
           <Block flex marginLeft={getSize.m(5)}>
@@ -61,7 +61,7 @@ const Tendency = ({
           <Block row alignCenter space="between">
             <Text size={getSize.s(20)}>{title}</Text>
             <Block row alignCenter>
-              <Text color={'#2B80EF'}>Xem tất cả </Text>
+              <Text color={theme.colors.blueHeader}>Xem tất cả </Text>
               <Image source={icons.rightarrow} style={styles.icon} />
             </Block>
           </Block>

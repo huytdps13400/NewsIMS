@@ -1,4 +1,5 @@
 import {Block, Text} from '@components';
+import {theme} from '@theme';
 import {getSize} from '@utils/responsive';
 import React from 'react';
 import {Pressable, ScrollView} from 'react-native';
@@ -9,9 +10,9 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
     <Block
       shadow
       paddingHorizontal={12}
-      shadowColor="#000"
+      shadowColor={theme.colors.black}
       row
-      backgroundColor="#fff">
+      backgroundColor={theme.colors.white}>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -63,7 +64,7 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
                 bottom={0}
                 right={0}
                 marginLeft={index === 0 ? getSize.m(0) : getSize.m(20)}
-                backgroundColor={isFocused ? '#4192FF' : 'white'}
+                backgroundColor={isFocused ? theme.colors.blueHeader : 'white'}
               />
             </Pressable>
           );

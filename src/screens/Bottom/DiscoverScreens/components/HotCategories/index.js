@@ -1,11 +1,12 @@
 import {Block, Text} from '@components';
+import {theme} from '@theme';
 import React from 'react';
 import {FlatList} from 'react-native';
 
 const HotCategories = () => {
   const _renderItem = () => (
     <Block radius={12} padding={20} marginBottom={20} backgroundColor="white">
-      <Text size={13} fontType="semibold" color={'#E95320'}>
+      <Text size={13} fontType="semibold" color={theme.colors.orange}>
         BTC MISS WORLD VIỆT NAM CHÍNH THỨC LÊN TIẾNG
       </Text>
       <Text marginTop={10}>
@@ -13,9 +14,12 @@ const HotCategories = () => {
       </Text>
       <Block row justifyCenter marginTop={20} space="between">
         <Block row>
-          <Text size={14} fontType="semibold" color={'#096CFF'}>
+          <Text size={14} fontType="semibold" color={theme.colors.blueHeader}>
             Cập nhật
-            <Text size={13} fontType={'regular'} color={'#096CFF'}>
+            <Text
+              size={13}
+              fontType={'regular'}
+              color={theme.colors.blueHeader}>
               . Tin thế gới
             </Text>
           </Text>

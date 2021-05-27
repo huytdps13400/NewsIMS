@@ -20,7 +20,7 @@ const HeaderHome = () => {
   const {top} = useSafeAreaInsets();
 
   return (
-    <Block backgroundColor="#0088EE">
+    <Block backgroundColor={theme.colors.blueHeader}>
       <Block paddingTop={top + 10} paddingHorizontal={12}>
         <Block row alignCenter width={'100%'}>
           <Image source={icons.logoims} style={styles.logo} />
@@ -50,7 +50,7 @@ const HeaderCommon = ({title, canGoBack}) => {
   const {top} = useSafeAreaInsets();
   const navigation = useNavigation();
   return (
-    <Block backgroundColor="#0088EE">
+    <Block backgroundColor={theme.colors.blueHeader}>
       <Block
         row
         alignCenter
@@ -65,7 +65,12 @@ const HeaderCommon = ({title, canGoBack}) => {
         )}
 
         {title && (
-          <Text flex center size={17} fontType="semibold" color="white">
+          <Text
+            flex
+            center
+            size={17}
+            fontType="semibold"
+            color={theme.colors.white}>
             {title}
           </Text>
         )}

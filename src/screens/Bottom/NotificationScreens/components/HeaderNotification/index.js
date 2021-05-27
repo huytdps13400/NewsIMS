@@ -12,7 +12,7 @@ const HeaderNotification = () => {
       row
       justifyCenter
       padding={12}
-      backgroundColor={'#fff'}
+      backgroundColor={theme.colors.white}
       space={'between'}>
       <Block row alignCenter>
         <Pressable>
@@ -36,7 +36,11 @@ const HeaderNotification = () => {
             style={styles.image3}
           />
         </Pressable>
-        <Text marginLeft={17} size={14} color={'#2374DF'} fontType="semibold">
+        <Text
+          marginLeft={17}
+          size={14}
+          color={theme.colors.blueHeader}
+          fontType="semibold">
           Đánh dấu là đã đọc
         </Text>
       </Block>
@@ -48,7 +52,7 @@ const HeaderNotification = () => {
           radius={10}
           width={20}
           height={20}
-          borderColor={'#C9C9C9'}
+          borderColor={theme.col}
           backgroundColor={theme.colors.smoke}>
           <Image
             resizeMode={'contain'}
