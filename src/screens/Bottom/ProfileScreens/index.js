@@ -5,7 +5,7 @@ import {width} from '@utils/responsive';
 import {useImagePicker} from '@hooks';
 import Storage from '@utils/storage';
 import ImagePickerModal from '@components/ImagePickerModal';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import ButtonProfile from './components/ButtonProfile';
 import ButtonUtility from './components/ButtonUtility';
@@ -14,13 +14,30 @@ import HeaderProfile from './components/HeaderProfile';
 import styles from './styles';
 
 const ProfileScreens = () => {
+  const dispatch = useDispatch();
   const navigation = useNavigation();
   const {picture, closeModal, openPicker, openCamera} = useImagePicker();
-  const {isLoading} = useSelector(state => state.logOut);
-  const dispatch = useDispatch();
   const [isVisible, setIsVisible] = useState(false);
-
+  const {isLoading} = useSelector(state => state.logOut);
+  const user = useSelector(state => state.tokenUser.data);
   const _closeImagePickerModal = () => setIsVisible(false);
+
+  useEffect(() => {
+    setIsVisible(false);
+  }, [closeModal]);
+
+  useEffect(() => {
+    if (picture) {
+      const formData = new FormData();
+      formData.append('picture', picture);
+
+      dispatch({
+        type: actions.UPDATE_USER_INFORMATION,
+        user,
+        formData,
+      });
+    }
+  }, [dispatch, picture, user]);
 
   const _handleLogOut = () => {
     Storage.getItem('TOKEN_USER').then(tokenUser => {
