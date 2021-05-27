@@ -40,6 +40,8 @@ export const icons = {
   facebook: require('./icons/facebook.png'),
   auth_email: require('./icons/auth_email.png'),
   auth_phone: require('./icons/auth_phone.png'),
+  openPicker: require('./icons/openPicker.png'),
+  openCamera: require('./icons/openCamera.png'),
 };
 
 export const images = {
