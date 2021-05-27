@@ -26,7 +26,9 @@ const Item = React.memo(
             <Block>
               <Image
                 source={{
-                  uri: item.picture,
+                  uri: item.picture
+                    ? item.picture
+                    : 'https://reactnative.dev/img/tiny_logo.png',
                 }}
                 style={styles.image}
               />

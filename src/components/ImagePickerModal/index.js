@@ -25,7 +25,7 @@ const ImagePickerModal = ({
             <Image
               source={icons.openPicker}
               resizeMode="contain"
-              style={{...styles.icon, tintColor: config.general_active_color}}
+              style={{...styles.icon, tintColor: config?.general_active_color}}
             />
             <Text fontType="bold">Chọn ảnh từ thư viện</Text>
           </Block>
@@ -36,7 +36,7 @@ const ImagePickerModal = ({
             <Image
               source={icons.openCamera}
               resizeMode="contain"
-              style={{...styles.icon, tintColor: config.general_active_color}}
+              style={{...styles.icon, tintColor: config?.general_active_color}}
             />
             <Text fontType="bold">Chụp ảnh mới</Text>
           </Block>

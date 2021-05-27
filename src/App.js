@@ -41,6 +41,10 @@ const App = () => {
     }
   }, [dispatch, token]);
 
+  if (!token) {
+    return null;
+  }
+
   return <RootStack />;
 };
 

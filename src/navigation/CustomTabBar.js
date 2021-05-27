@@ -1,14 +1,30 @@
-import React from 'react';
-import {Block} from '@components';
-import {StyleSheet, Text, Pressable, Image, Platform} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {theme} from '@theme';
 import {icons} from '@assets';
+import {Block, Text} from '@components';
+import {theme} from '@theme';
 import {getSize} from '@utils/responsive';
+import React, {memo} from 'react';
+import {Image, Platform, Pressable, StyleSheet} from 'react-native';
+import Animated, {multiply} from 'react-native-reanimated';
+import {withTransition} from 'react-native-redash';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {useSelector} from 'react-redux';
+const ITEM_SIZE = getSize.s(20);
 
 const CustomTabBar = ({state, descriptors, navigation}) => {
+  const config = useSelector(reducer => reducer.config?.data);
   const {bottom} = useSafeAreaInsets();
-
+  const Icon = ({icon, color}) => {
+    return (
+      <Image
+        source={icon}
+        style={{
+          ...styles.icoBottom,
+          tintColor: color,
+        }}
+        resizeMode="contain"
+      />
+    );
+  };
   return (
     <Block
       row
@@ -16,6 +32,9 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
       paddingBottom={Platform.OS === 'ios' ? bottom : 10}
       paddingTop={10}>
       {state.routes.map((route, index) => {
+        const isFocused = state.index === index;
+        const activeTransition = withTransition(isFocused);
+        const width = multiply(activeTransition, ITEM_SIZE);
         const {options} = descriptors[route.key];
         const label =
           options.tabBarLabel !== undefined
@@ -24,7 +43,6 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
             ? options.title
             : route.name;
 
-        const isFocused = state.index === index;
         const icon =
           index === 0
             ? icons.home
@@ -35,6 +53,18 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
             : index === 3
             ? icons.notification
             : icons.profile;
+
+        const iconSelected =
+          index === 0
+            ? icons.home_selected
+            : index === 1
+            ? icons.tendency_selected
+            : index === 2
+            ? icons.star_selected
+            : index === 3
+            ? icons.notification_selected
+            : icons.profile_selected;
+
         const onPress = () => {
           const event = navigation.emit({
             type: 'tabPress',
@@ -55,16 +85,47 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
 
         return (
           <Pressable
-            key={index}
+            key={`CustomTabBar-${index}`}
+            onPress={onPress}
+            style={styles.container}
             accessibilityRole="button"
             accessibilityStates={isFocused ? ['selected'] : []}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
-            onPress={onPress}
-            onLongPress={onLongPress}
-            style={styles.btn}>
-            <Image source={icon} style={styles.iconstyle(isFocused)} />
-            <Text style={styles.textlabel(isFocused)}>{label}</Text>
+            onLongPress={onLongPress}>
+            <Block style={styles.icoBottom}>
+              <Block style={StyleSheet.absoluteFill}>
+                <Icon
+                  icon={isFocused ? iconSelected : icon}
+                  color={theme.colors.lightGray}
+                />
+              </Block>
+              <Animated.View style={{width, ...styles.hidden}}>
+                <Icon
+                  icon={isFocused ? iconSelected : icon}
+                  color={
+                    !isFocused
+                      ? config?.general_active_color
+                      : theme.colors.blue
+                  }
+                />
+              </Animated.View>
+            </Block>
+
+            <Block>
+              <Text
+                center
+                size={12}
+                marginTop={5}
+                color={
+                  isFocused
+                    ? config?.general_active_color
+                    : theme.colors.lightGray
+                }
+                numberOfLines={1}>
+                {label}
+              </Text>
+            </Block>
           </Pressable>
         );
       })}
@@ -72,22 +133,25 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
   );
 };
 
-export default CustomTabBar;
+export default memo(CustomTabBar);
 
 const styles = StyleSheet.create({
-  btn: {
+  container: {
     flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
   },
-  textlabel: isFocused => ({
-    color: isFocused ? '#096CFF' : theme.colors.lightGray,
-    marginTop: 5,
-    fontSize: 10,
-  }),
-  iconstyle: isFocused => ({
-    width: getSize.s(20),
-    height: getSize.s(20),
-    resizeMode: 'contain',
-    tintColor: isFocused ? '#096CFF' : theme.colors.lightGray,
-  }),
+  icoBottom: {
+    height: ITEM_SIZE,
+    width: ITEM_SIZE,
+  },
+  hidden: {
+    overflow: 'hidden',
+  },
+  badge: {
+    position: 'absolute',
+    zIndex: 10,
+    top: getSize.m(-7),
+    right: getSize.m(15),
+  },
 });

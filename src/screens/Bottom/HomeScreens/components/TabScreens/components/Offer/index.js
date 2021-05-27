@@ -10,9 +10,20 @@ import React from 'react';
 import {FlatList, Image, Pressable} from 'react-native';
 import styles from './styles';
 
-const Offer = ({title, titlevideo, describe, onebox, threebox, list}) => {
+const Offer = ({title, titlevideo, describe, onebox, threebox, list, data}) => {
   const _renderItem = ({item}) => {
-    return <ItemNews />;
+    return (
+      <ItemNews
+        item_id={item.item_id}
+        group_id={item.group_id}
+        image={item.image}
+        date_update={item.date_update}
+        title={item.title}
+        short={item.short}
+        thumbnail={item.thumbnail}
+        lab={item.lab}
+      />
+    );
   };
   const navigation = useNavigation();
 
@@ -94,10 +105,10 @@ const Offer = ({title, titlevideo, describe, onebox, threebox, list}) => {
       {list && (
         <Block marginHorizontal={getSize.m(12)}>
           <FlatList
-            data={[1, 2, 3, 4, 5, 6, 7]}
+            data={data}
             removeClippedSubviews={true}
             renderItem={_renderItem}
-            keyExtractor={item => item}
+            keyExtractor={(_, index) => String(index)}
           />
         </Block>
       )}

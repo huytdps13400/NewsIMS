@@ -8,7 +8,7 @@ import {Image, Pressable} from 'react-native';
 import styles from './styles';
 
 const itemNews = React.memo(
-  ({item_id, group_id, picture, date_update, title, short, thumbnail}) => {
+  ({item_id, group_id, image, date_update, title, short, thumbnail, lab}) => {
     const navigation = useNavigation();
     return (
       <Block marginTop={getSize.m(18)}>
@@ -17,7 +17,7 @@ const itemNews = React.memo(
           <Block row>
             <Image
               source={{
-                uri: picture,
+                uri: image,
               }}
               style={styles.styleimg}
             />
@@ -33,7 +33,7 @@ const itemNews = React.memo(
                 numberOfLines={2}
                 marginTop={getSize.m(20)}
                 color={theme.colors.lightGray}>
-                {date_update}
+                {lab} {date_update}
               </Text>
             </Block>
           </Block>

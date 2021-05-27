@@ -1,49 +1,37 @@
 import {Block, Header} from '@components';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import React from 'react';
+import actions from '@redux/actions';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import TabScreens from './components/TabScreens';
 import TopTabBar from './components/TabScreens/CustomTabbar';
 
 const Tab = createMaterialTopTabNavigator();
 
 const HomeScreens = () => {
-  const DATATAB = [
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'Theo dõi',
-    },
-    {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Đề xuất',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Xã hội',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d71',
-      title: 'Thế giới',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d82',
-      title: 'Bóng đá việt nam',
-    },
-  ];
+  const dispatch = useDispatch();
+  const data = useSelector(state => state.newsGroup.data);
+
+  useEffect(() => {
+    dispatch({type: actions.GET_NEWS_GROUP});
+  }, [dispatch]);
 
   return (
     <Block flex>
       <Header type="Home" />
-      <Tab.Navigator
-        lazy
-        tabBar={props => <TopTabBar {...props} inactiveTintColor={'#000'} />}>
-        {DATATAB.map(item => {
-          return (
-            <Tab.Screen name={item.title} key={item.id}>
-              {() => <TabScreens />}
-            </Tab.Screen>
-          );
-        })}
-      </Tab.Navigator>
+      {data && (
+        <Tab.Navigator
+          lazy
+          tabBar={props => <TopTabBar {...props} inactiveTintColor={'#000'} />}>
+          {data.map((item, index) => {
+            return (
+              <Tab.Screen key={`group_id-${index}`} name={item?.title}>
+                {() => <TabScreens index={index} group_id={item?.group_id} />}
+              </Tab.Screen>
+            );
+          })}
+        </Tab.Navigator>
+      )}
     </Block>
   );
 };
