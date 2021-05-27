@@ -17,7 +17,7 @@ const Item = React.memo(
             space="between"
             borderColor={theme.colors.whiteGray}>
             <Block width={'70%'} marginRight={20}>
-              <Text numberOfLines={2} size={17} fontType="semibold">
+              <Text size={17} numberOfLines={2} fontType="semibold">
                 {item.title}
               </Text>
               <Text marginTop={14} size={13}>

@@ -10,7 +10,7 @@ const SystemNews = () => {
   const data = useSelector(state => state.news?.data);
   const dispatch = useDispatch();
   const [refreshing, setRefreshing] = useState(false);
-  const [page, setPage] = useState(1);
+  const [, setPage] = useState(1);
 
   useEffect(() => {
     dispatch({type: actions.GET_NEWS, params: {p: 1, numshow: 12}});

@@ -33,7 +33,7 @@ const HeaderNotification = () => {
           <Image
             resizeMode={'contain'}
             source={icons.refresh}
-            style={styles.image3}
+            style={{...styles.image1, marginLeft: 10}}
           />
         </Pressable>
         <Text

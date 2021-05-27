@@ -47,18 +47,18 @@ const ProfileDetails = ({route}) => {
       <HeaderProfile canGoBack />
 
       <Block
-        shadow
         flex
+        shadow
+        absolute
         justifyCenter
-        paddingHorizontal={30}
+        top={175}
         radius={17}
         width={width - 22}
+        paddingHorizontal={30}
         space={'between'}
-        absolute
-        top={175}
         alignSelf="center"
         backgroundColor="white">
-        <Block row alignCenter space={'between'} marginTop={20}>
+        <Block row alignCenter marginTop={20} space={'between'}>
           <Text size={16} fontType="bold">
             Thông tin hồ sơ của bạn
           </Text>
@@ -67,10 +67,10 @@ const ProfileDetails = ({route}) => {
         <Block
           row
           alignCenter
-          borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
+          paddingTop={30}
           paddingBottom={10}
-          paddingTop={30}>
+          borderBottomWidth={1}
+          borderBottomColor={theme.colors.smoke}>
           <TextInput
             iconLeft={icons.profile7}
             style={styles.inputWrap}
@@ -87,12 +87,12 @@ const ProfileDetails = ({route}) => {
           row
           alignCenter
           borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
           paddingBottom={10}
-          paddingTop={30}>
+          paddingTop={30}
+          borderBottomColor={theme.colors.smoke}>
           <Image
-            source={icons.profile6}
             resizeMode="contain"
+            source={icons.profile6}
             style={styles.imageTitle}
           />
           <Text marginLeft={5}>Giới tính</Text>
@@ -108,9 +108,9 @@ const ProfileDetails = ({route}) => {
           row
           alignCenter
           borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
           paddingBottom={10}
-          paddingTop={30}>
+          paddingTop={30}
+          borderBottomColor={theme.colors.smoke}>
           <TextInput
             iconLeft={icons.profile7}
             style={styles.inputWrap}
@@ -127,9 +127,9 @@ const ProfileDetails = ({route}) => {
           row
           alignCenter
           borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
           paddingBottom={10}
-          paddingTop={30}>
+          paddingTop={30}
+          borderBottomColor={theme.colors.smoke}>
           <TextInput
             iconLeft={icons.profile8}
             style={styles.inputWrap}
@@ -146,9 +146,9 @@ const ProfileDetails = ({route}) => {
           row
           alignCenter
           borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
           paddingBottom={10}
-          paddingTop={30}>
+          paddingTop={30}
+          borderBottomColor={theme.colors.smoke}>
           <TextInput
             iconLeft={icons.phone}
             style={styles.inputWrap}
@@ -165,9 +165,9 @@ const ProfileDetails = ({route}) => {
           row
           alignCenter
           borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
           paddingBottom={10}
-          paddingTop={30}>
+          paddingTop={30}
+          borderBottomColor={theme.colors.smoke}>
           <TextInput
             iconLeft={icons.profile10}
             style={styles.inputWrap}
@@ -183,7 +183,7 @@ const ProfileDetails = ({route}) => {
 
         <Button
           onPress={() => _onConfirmInfo()}
-          style={{marginTop: 45, marginBottom: 30}}
+          style={styles.button}
           title={'Cập nhật tài khoản'}
         />
       </Block>

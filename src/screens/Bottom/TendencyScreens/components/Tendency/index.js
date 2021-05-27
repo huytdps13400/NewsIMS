@@ -22,9 +22,7 @@ const Tendency = ({
 }) => {
   const navigation = useNavigation();
 
-  const _renderItem = () => {
-    return <ItemNews />;
-  };
+  const _renderItem = () => <ItemNews />;
 
   const _renderItemBox = ({item, index}) => {
     return (

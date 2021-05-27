@@ -7,5 +7,9 @@ export default StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: 'blue',
   },
-  container: {position: 'absolute', top: 160, alignSelf: 'center'},
+  container: {
+    position: 'absolute',
+    top: 160,
+    alignSelf: 'center',
+  },
 });

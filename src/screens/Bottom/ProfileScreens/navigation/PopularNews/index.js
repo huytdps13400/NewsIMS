@@ -10,22 +10,20 @@ const PopularNews = () => {
   const data = useSelector(state => state.news?.data);
   const dispatch = useDispatch();
   const [refreshing, setRefreshing] = useState(false);
-  const [page, setPage] = useState(1);
+  const [, setPage] = useState(1);
 
   useEffect(() => {
     dispatch({type: actions.GET_NEWS, params: {p: 1, numshow: 12}});
   }, [dispatch]);
 
-  const _renderItem = ({item}) => {
-    return (
-      <ItemNews
-        item_id={item.item_id}
-        picture={item.picture}
-        date_update={item.date_update}
-        title={item.title}
-      />
-    );
-  };
+  const _renderItem = ({item}) => (
+    <ItemNews
+      item_id={item.item_id}
+      picture={item.picture}
+      date_update={item.date_update}
+      title={item.title}
+    />
+  );
 
   const _onRefresh = () => {
     setRefreshing(true);

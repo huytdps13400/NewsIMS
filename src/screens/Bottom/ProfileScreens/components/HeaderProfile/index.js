@@ -17,21 +17,33 @@ const HeaderProfile = ({next, canGoBack}) => {
       row
       alignCenter
       paddingVertical={70}
-      backgroundColor={theme.color.blueHeader}>
+      backgroundColor={theme.colors.blueHeader}>
       {canGoBack && (
         <Pressable style={styles.btnback} onPress={() => navigation.goBack()}>
-          <Image source={icons.back} style={styles.icoBack} />
+          <Image
+            resizeMode="contain"
+            source={icons.back}
+            style={styles.icoBack}
+          />
         </Pressable>
       )}
       <Block row alignCenter justifyCenter marginHorizontal={12}>
         <Block
+          justifyCenter
+          radius={50}
           borderWidth={4}
           borderColor="smoke"
-          backgroundColor="red"
-          radius={50}
-          justifyCenter>
-          <Image source={{uri: user?.picture}} style={styles.imgAvatar} />
-          <Image source={icons.camera} style={styles.imgCamera} />
+          backgroundColor="red">
+          <Image
+            resizeMode="contain"
+            source={{uri: user?.picture}}
+            style={styles.imgAvatar}
+          />
+          <Image
+            resizeMode="contain"
+            source={icons.camera}
+            style={styles.imgCamera}
+          />
         </Block>
         <Block marginHorizontal={20}>
           <Text size={16} color={theme.colors.white} fontType="bold">
@@ -47,7 +59,11 @@ const HeaderProfile = ({next, canGoBack}) => {
           onPress={() =>
             navigation.navigate(routes.PROFILE_DETAILS, {user: user})
           }>
-          <Image style={styles.imgNext} source={icons.next} />
+          <Image
+            resizeMode="contain"
+            style={styles.imgNext}
+            source={icons.next}
+          />
         </Pressable>
       ) : null}
     </Block>

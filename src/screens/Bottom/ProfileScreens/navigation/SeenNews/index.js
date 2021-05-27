@@ -16,16 +16,14 @@ const SeenNews = () => {
     dispatch({type: actions.GET_NEWS, params: {p: 1, numshow: 12}});
   }, [dispatch]);
 
-  const _renderItem = ({item}) => {
-    return (
-      <ItemNews
-        item_id={item.item_id}
-        picture={item.picture}
-        date_update={item.date_update}
-        title={item.title}
-      />
-    );
-  };
+  const _renderItem = ({item}) => (
+    <ItemNews
+      item_id={item.item_id}
+      picture={item.picture}
+      date_update={item.date_update}
+      title={item.title}
+    />
+  );
 
   const _onRefresh = () => {
     setRefreshing(true);

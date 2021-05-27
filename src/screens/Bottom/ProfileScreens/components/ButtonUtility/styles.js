@@ -13,11 +13,9 @@ export default StyleSheet.create({
               scaleY: getSize.m(1, 0.1),
             },
           ],
-    resizeMode: 'contain',
   },
   icon_next: {
     width: getSize.m(12),
     height: getSize.m(12),
-    resizeMode: 'contain',
   },
 });
