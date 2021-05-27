@@ -1,14 +1,17 @@
 import {icons} from '@assets';
 import {Block, Text} from '@components';
+
 import {routes} from '@navigation/routes';
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
+import {theme} from '@theme';
+import React, {useState} from 'react';
 import {Image, Pressable} from 'react-native';
 import {useSelector} from 'react-redux';
 import styles from './styles';
 
-const HeaderProfile = ({next, canGoBack}) => {
+const HeaderProfile = ({next, canGoBack, setIsVisible}) => {
   const navigation = useNavigation();
+
   const user = useSelector(state => state.userInfo).data;
 
   return (
@@ -19,18 +22,18 @@ const HeaderProfile = ({next, canGoBack}) => {
         </Pressable>
       )}
       <Block row alignCenter justifyCenter marginHorizontal={12}>
-        <Block
+        <Pressable
           borderWidth={4}
-          borderColor="smoke"
-          backgroundColor="red"
-          radius={50}>
+          borderColor={theme.colors.smoke}
+          borderRadius={50}
+          onPress={() => setIsVisible(true)}>
           <Image source={{uri: user?.picture}} style={styles.imgAvatar} />
           <Image
             source={icons.camera}
             style={styles.imgCamera}
             resizeMode="contain"
           />
-        </Block>
+        </Pressable>
         <Block marginHorizontal={20}>
           <Text size={16} color={'#fff'} fontType="bold">
             {user?.full_name}
@@ -40,14 +43,14 @@ const HeaderProfile = ({next, canGoBack}) => {
           </Text>
         </Block>
       </Block>
-      {next ? (
+      {next && (
         <Pressable
           onPress={() =>
             navigation.navigate(routes.PROFILE_DETAILS, {user: user})
           }>
           <Image style={styles.imgNext} source={icons.next} />
         </Pressable>
-      ) : null}
+      )}
     </Block>
   );
 };

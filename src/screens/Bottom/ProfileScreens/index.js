@@ -2,8 +2,10 @@ import {Block, Button} from '@components';
 import {useNavigation} from '@react-navigation/native';
 import actions from '@redux/actions';
 import {width} from '@utils/responsive';
+import {useImagePicker} from '@hooks';
 import Storage from '@utils/storage';
-import React from 'react';
+import ImagePickerModal from '@components/ImagePickerModal';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import ButtonProfile from './components/ButtonProfile';
 import ButtonUtility from './components/ButtonUtility';
@@ -13,8 +15,12 @@ import styles from './styles';
 
 const ProfileScreens = () => {
   const navigation = useNavigation();
+  const {picture, closeModal, openPicker, openCamera} = useImagePicker();
   const {isLoading} = useSelector(state => state.logOut);
   const dispatch = useDispatch();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const _closeImagePickerModal = () => setIsVisible(false);
 
   const _handleLogOut = () => {
     Storage.getItem('TOKEN_USER').then(tokenUser => {
@@ -47,7 +53,7 @@ const ProfileScreens = () => {
 
   return (
     <Block flex backgroundColor="white">
-      <HeaderProfile next />
+      <HeaderProfile next setIsVisible={setIsVisible} />
       <Block
         row
         shadow
@@ -71,6 +77,13 @@ const ProfileScreens = () => {
           disabled={isLoading}
         />
       </Block>
+      <ImagePickerModal
+        isVisible={isVisible}
+        setIsVisible={setIsVisible}
+        onBackdropPress={_closeImagePickerModal}
+        openPicker={openPicker}
+        openCamera={openCamera}
+      />
     </Block>
   );
 };

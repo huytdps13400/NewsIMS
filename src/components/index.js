@@ -10,6 +10,7 @@ import CheckBox from '@components/CheckBox';
 import FormContainer from '@components/Form/FormContainer';
 import Loading from '@components/Common/Loading';
 import RadioButton from '@components/RadioButton';
+import ImagePickerModal from '@components/ImagePickerModal';
 
 export {
   Block,
@@ -24,4 +25,5 @@ export {
   FormContainer,
   Loading,
   RadioButton,
+  ImagePickerModal,
 };

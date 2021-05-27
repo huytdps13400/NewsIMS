@@ -23,6 +23,7 @@ const App = () => {
 
   useEffect(() => {
     if (token) {
+      dispatch({type: actions.GET_CONFIG});
       Storage.getItem('TOKEN_USER').then(user => {
         if (user) {
           dispatch({
