@@ -17,7 +17,7 @@ const HeaderProfile = ({next, canGoBack}) => {
       row
       alignCenter
       paddingVertical={70}
-      backgroundColor={theme.color.blueHeader}>
+      backgroundColor={theme.colors.blueHeader}>
       {canGoBack && (
         <Pressable style={styles.btnback} onPress={() => navigation.goBack()}>
           <Image source={icons.back} style={styles.icoBack} />

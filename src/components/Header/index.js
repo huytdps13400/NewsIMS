@@ -2,7 +2,6 @@ import {icons} from '@assets';
 import {Block, Text} from '@components';
 import {useNavigation} from '@react-navigation/native';
 import {theme} from '@theme';
-import {getSize} from '@utils/responsive';
 import React from 'react';
 import {Image, Pressable} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -34,7 +33,7 @@ const HeaderHome = () => {
               marginLeft={15}
               width={'80%'}
               backgroundColor="white">
-              <Text color={theme.colors.lightGray} size={getSize.s(12)}>
+              <Text color={theme.colors.lightGray} size={12}>
                 Tìm kiếm...
               </Text>
             </Block>

@@ -8,10 +8,10 @@ import styles from './styles';
 const CustomTabBar = ({state, descriptors, navigation}) => {
   return (
     <Block
+      row
       shadow
       paddingHorizontal={12}
       shadowColor={theme.colors.black}
-      row
       backgroundColor={theme.colors.white}>
       <ScrollView
         horizontal

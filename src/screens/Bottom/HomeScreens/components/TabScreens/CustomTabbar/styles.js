@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {theme} from '@theme';
 import {getSize} from '@utils/responsive';
+
 export default StyleSheet.create({
   btn: {
     flex: 1,

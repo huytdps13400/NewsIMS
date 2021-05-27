@@ -57,7 +57,7 @@ const NotificationScreens = () => {
 
   return (
     <Block flex>
-      <Header title={'Thông báo'} />
+      <Header title="Thông báo" />
       {user ? (
         <Block flex>
           <HeaderNotification />

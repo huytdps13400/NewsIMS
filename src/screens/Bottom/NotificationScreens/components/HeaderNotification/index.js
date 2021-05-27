@@ -13,11 +13,11 @@ const HeaderNotification = () => {
       justifyCenter
       padding={12}
       backgroundColor={theme.colors.white}
-      space={'between'}>
+      space="between">
       <Block row alignCenter>
         <Pressable>
           <Image
-            resizeMode={'contain'}
+            resizeMode="contain"
             source={icons.square}
             style={styles.image1}
           />
@@ -31,7 +31,7 @@ const HeaderNotification = () => {
         </Pressable>
         <Pressable>
           <Image
-            resizeMode={'contain'}
+            resizeMode="contain"
             source={icons.refresh}
             style={styles.image3}
           />
@@ -55,7 +55,7 @@ const HeaderNotification = () => {
           borderColor={theme.col}
           backgroundColor={theme.colors.smoke}>
           <Image
-            resizeMode={'contain'}
+            resizeMode="contain"
             source={icons.dot}
             style={styles.imgItem}
           />

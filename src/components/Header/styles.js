@@ -1,7 +1,7 @@
-import {fonts} from '@assets';
 import {theme} from '@theme';
 import {getSize} from '@utils/responsive';
 import {StyleSheet} from 'react-native';
+
 export default StyleSheet.create({
   logo: {
     width: getSize.s(70),
