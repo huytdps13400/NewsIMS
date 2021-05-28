@@ -8,6 +8,7 @@ import styles from './styles';
 const ButtonUtility = ({icon, title, check, onPress}) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
   return (
     <Pressable onPress={onPress}>
       <Block

@@ -73,4 +73,5 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
     </Block>
   );
 };
+
 export default CustomTabBar;
