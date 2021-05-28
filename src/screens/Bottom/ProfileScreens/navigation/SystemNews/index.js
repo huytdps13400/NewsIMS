@@ -44,7 +44,7 @@ const SystemNews = () => {
 
   return (
     <Block flex marginBottom={getSize.m(20)}>
-      <Header title="Tin hệ thống" canGoBack />
+      <Header canGoBack title="Tin hệ thống" />
       <Block flex paddingHorizontal={getSize.m(12)}>
         <FlatList
           showsVerticalScrollIndicator={false}

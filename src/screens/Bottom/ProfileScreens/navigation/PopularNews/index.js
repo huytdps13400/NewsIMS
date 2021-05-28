@@ -42,7 +42,7 @@ const PopularNews = () => {
 
   return (
     <Block flex marginBottom={getSize.m(20)}>
-      <Header title="Tin đọc nhiều" canGoBack />
+      <Header canGoBack title="Tin đọc nhiều" />
       <Block flex paddingHorizontal={getSize.m(12)}>
         <FlatList
           showsVerticalScrollIndicator={false}

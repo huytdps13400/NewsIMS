@@ -6,7 +6,7 @@ const NotificationDetailsScreen = ({route}) => {
 
   return (
     <Block flex backgroundColor={'white'}>
-      <Header title="Chi tiết thông báo" canGoBack />
+      <Header canGoBack title="Chi tiết thông báo" />
       <Block padding={12}>
         <Text fontType="semibold" size={16}>
           {title}
