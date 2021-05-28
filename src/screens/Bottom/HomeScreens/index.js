@@ -4,7 +4,7 @@ import actions from '@redux/actions';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import TabScreens from './components/TabScreens';
-import TopTabBar from './components/TabScreens/CustomTabbar';
+import TopTabBar from './components/TabScreens/TabbarGroudNews';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -25,7 +25,7 @@ const HomeScreens = () => {
           tabBar={props => <TopTabBar {...props} inactiveTintColor={'#000'} />}>
           {data.map((item, index) => {
             return (
-              <Tab.Screen key={`group_id-${index}`} name={item?.title}>
+              <Tab.Screen key={index} name={item?.title}>
                 {() => <TabScreens index={index} group_id={item?.group_id} />}
               </Tab.Screen>
             );

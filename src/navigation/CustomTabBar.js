@@ -1,30 +1,50 @@
 import {icons} from '@assets';
 import {Block, Text} from '@components';
+import actions from '@redux/actions';
 import {theme} from '@theme';
 import {getSize} from '@utils/responsive';
-import React, {memo} from 'react';
+import React, {memo, useEffect} from 'react';
 import {Image, Platform, Pressable, StyleSheet} from 'react-native';
+import {Badge} from 'react-native-elements';
 import Animated, {multiply} from 'react-native-reanimated';
 import {withTransition} from 'react-native-redash';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+
+const Icon = ({icon, color}) => {
+  return (
+    <Image
+      source={icon}
+      style={{
+        ...styles.icoBottom,
+        tintColor: color,
+      }}
+      resizeMode="contain"
+    />
+  );
+};
 const ITEM_SIZE = getSize.s(20);
 
 const CustomTabBar = ({state, descriptors, navigation}) => {
+  const dispatch = useDispatch();
+  const user = useSelector(store => store.tokenUser.data);
+  const totalNotify = useSelector(store => store.totalNotify?.data);
+
   const config = useSelector(reducer => reducer.config?.data);
   const {bottom} = useSafeAreaInsets();
-  const Icon = ({icon, color}) => {
-    return (
-      <Image
-        source={icon}
-        style={{
-          ...styles.icoBottom,
-          tintColor: color,
-        }}
-        resizeMode="contain"
-      />
-    );
-  };
+
+  useEffect(() => {
+    if (user) {
+      dispatch({
+        type: actions.GET_TOTAL_NOTIFICATION,
+        params: {
+          user,
+          type: 'reading',
+        },
+      });
+    }
+  }, [dispatch, user]);
+
   return (
     <Block
       row
@@ -93,6 +113,13 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
             onLongPress={onLongPress}>
+            {index === 3 && !!totalNotify && (
+              <Badge
+                value={totalNotify || 0}
+                status="error"
+                containerStyle={styles.badge}
+              />
+            )}
             <Block style={styles.icoBottom}>
               <Block style={StyleSheet.absoluteFill}>
                 <Icon

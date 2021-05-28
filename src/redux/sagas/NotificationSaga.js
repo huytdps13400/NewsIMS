@@ -51,19 +51,6 @@ function* getTotalNotify(actions) {
   }
 }
 
-// function* getNotificationDetails(actions) {
-//   try {
-//     const res = yield API.get('getNotification', actions.params);
-//     yield put({
-//       type: _onSuccess(Actions.GET_NOTIFICATION_DETAILS),
-//       data: res.data,
-//     });
-//   } catch (error) {
-//     yield put({type: _onFail(Actions.GET_NOTIFICATION_DETAILS)});
-//     hanldeErrorCode(error);
-//   }
-// }
-
 export function* watchNotificationSagas() {
   yield takeLatest(Actions.GET_NOTIFICATION, getNotification);
   yield takeLatest(Actions.UPDATE_NOTIFICATION, updateNotify);

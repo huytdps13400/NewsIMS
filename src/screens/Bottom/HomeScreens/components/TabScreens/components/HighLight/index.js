@@ -64,7 +64,7 @@ const HighLight = () => {
         showsHorizontalScrollIndicator={false}
         data={DATA}
         renderItem={_renderItem}
-        keyExtractor={item => item.item_id}
+        keyExtractor={(_, index) => String(index)}
       />
     </Block>
   );

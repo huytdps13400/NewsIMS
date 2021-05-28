@@ -1,12 +1,12 @@
-import {StyleSheet} from 'react-native';
 import {theme} from '@theme';
 import {getSize} from '@utils/responsive';
+import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   btn: {
     flex: 1,
     alignItems: 'center',
-    height: getSize.v(42),
+    height: getSize.s(42),
     justifyContent: 'center',
   },
   textlabel: (isFocused, index) => ({
