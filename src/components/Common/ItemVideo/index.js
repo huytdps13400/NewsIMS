@@ -5,6 +5,7 @@ import {getSize, width} from '@utils/responsive';
 import React from 'react';
 import {Image, Pressable} from 'react-native';
 import styles from './styles';
+
 const ItemVideo = ({style, title, describe}) => {
   return (
     <Block style={style}>
@@ -32,7 +33,6 @@ const ItemVideo = ({style, title, describe}) => {
           </Text>
         </Block>
       </Pressable>
-
       <Text marginTop={14} size={15}>
         {describe}
       </Text>
