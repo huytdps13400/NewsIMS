@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		41393791A79C24517B251FE2 /* libPods-NewsIMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4729F4B6C3187F939D7E0F1 /* libPods-NewsIMS.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9345E9A22660B17E00D11181 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9345E9A12660B17E00D11181 /* File.swift */; };
 		E1AEA5989C14516C5D5B6D08 /* libPods-NewsIMS-NewsIMSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F63DA19EF81E714404396BD /* libPods-NewsIMS-NewsIMSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,8 @@
 		78BD142569079BA9BAC5A106 /* Pods-NewsIMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsIMS.release.xcconfig"; path = "Target Support Files/Pods-NewsIMS/Pods-NewsIMS.release.xcconfig"; sourceTree = "<group>"; };
 		7DD5B24269A5F54FF0B204FC /* Pods-NewsIMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsIMS.debug.xcconfig"; path = "Target Support Files/Pods-NewsIMS/Pods-NewsIMS.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NewsIMS/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9345E9A02660B17E00D11181 /* NewsIMS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NewsIMS-Bridging-Header.h"; sourceTree = "<group>"; };
+		9345E9A12660B17E00D11181 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		940E92E2EEEE554A38387898 /* Pods-NewsIMS-NewsIMSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsIMS-NewsIMSTests.release.xcconfig"; path = "Target Support Files/Pods-NewsIMS-NewsIMSTests/Pods-NewsIMS-NewsIMSTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4729F4B6C3187F939D7E0F1 /* libPods-NewsIMS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewsIMS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26102D8E99E1030502F4B03 /* Pods-NewsIMS-NewsIMSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsIMS-NewsIMSTests.debug.xcconfig"; path = "Target Support Files/Pods-NewsIMS-NewsIMSTests/Pods-NewsIMS-NewsIMSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				9345E9A12660B17E00D11181 /* File.swift */,
+				9345E9A02660B17E00D11181 /* NewsIMS-Bridging-Header.h */,
 			);
 			name = NewsIMS;
 			sourceTree = "<group>";
@@ -205,7 +210,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -375,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				9345E9A22660B17E00D11181 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +470,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NewsIMS;
+				SWIFT_OBJC_BRIDGING_HEADER = "NewsIMS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -490,6 +497,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NewsIMS;
+				SWIFT_OBJC_BRIDGING_HEADER = "NewsIMS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

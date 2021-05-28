@@ -1,4 +1,4 @@
-export const icons = {
+const icons = {
   home: require('./icons/home.png'),
   home_selected: require('./icons/home_selected.png'),
   notification: require('./icons/notification.png'),
@@ -49,7 +49,12 @@ export const icons = {
   openCamera: require('./icons/openCamera.png'),
 };
 
-export const images = {
+const images = {
   discover: require('./images/discover.png'),
   bannerhome: require('./images/bannerhome.png'),
 };
+
+const lottie = {
+  bell: require('./lottie/bell.json'),
+};
+export {icons, lottie, images};

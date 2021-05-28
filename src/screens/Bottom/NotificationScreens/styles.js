@@ -12,4 +12,8 @@ export default StyleSheet.create({
     width: getSize.s(75),
     height: getSize.s(75),
   },
+  icon: {
+    height: getSize.s(100),
+    width: getSize.s(100),
+  },
 });

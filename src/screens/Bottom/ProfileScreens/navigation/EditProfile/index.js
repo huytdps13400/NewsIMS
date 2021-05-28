@@ -1,6 +1,5 @@
 import {icons} from '@assets';
 import {Block, Button, RadioButton, Text, TextInput} from '@components';
-import {useNavigation} from '@react-navigation/core';
 import actions from '@redux/actions';
 import {theme} from '@theme';
 import {width} from '@utils/responsive';
@@ -17,17 +16,18 @@ const DATA = [
 ];
 const ProfileDetails = ({route}) => {
   const dispatch = useDispatch();
-  const navigation = useNavigation();
+
   const {user} = route.params;
+
   const tokenUser = useSelector(state => state.tokenUser.data);
   const [isDatePicker, setIsDatePicker] = useState(false);
 
-  const [marital, setMarital] = useState(user.marital);
   const [phone, setPhone] = useState(user.phone);
   const [fullName, setfullName] = useState(user.full_name);
   const [email] = useState(user.email);
   const [gender, setGender] = useState(user.gender);
   const [birthday, setBirthday] = useState(user.birthday);
+
   const [city, setCity] = useState(user.city);
 
   const _onConfirmDate = date => {
@@ -114,6 +114,7 @@ const ProfileDetails = ({route}) => {
           borderBottomWidth={1}
           paddingBottom={10}
           paddingTop={30}
+          borderBottomColor={theme.colors.smoke}
           onPress={() => setIsDatePicker(true)}>
           <Image
             source={icons.profile7}
@@ -169,25 +170,6 @@ const ProfileDetails = ({route}) => {
             keyboardType="phone-pad"
             value={phone}
             onChangeText={text => setPhone(text)}
-          />
-        </Block>
-        <Block
-          row
-          alignCenter
-          borderBottomWidth={1}
-          paddingBottom={10}
-          paddingTop={30}
-          borderBottomColor={theme.colors.smoke}>
-          <TextInput
-            iconLeft={icons.profile10}
-            style={styles.inputWrap}
-            inputStyle={styles.input}
-            containerStyle={styles.container}
-            testLeft={'Tình trạng hôn nhân '}
-            placeholder={'Độc thân'}
-            keyboardType="phone-pad"
-            value={marital}
-            onChangeText={text => setMarital(text)}
           />
         </Block>
 

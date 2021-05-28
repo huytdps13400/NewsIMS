@@ -1,7 +1,10 @@
-import {Block, Button, Header, Text} from '@components';
+import {lottie} from '@assets';
+import {Block, Button, Header, LoadMore, Text} from '@components';
+import {NotificationHolder} from '@components/PlaceHolder';
 import {routes} from '@navigation/routes';
 import {useNavigation} from '@react-navigation/native';
 import actions from '@redux/actions';
+import Empty from '@screens/Common/Empty';
 import {width} from '@utils/responsive';
 import React, {useEffect, useState} from 'react';
 import {FlatList, Image, Pressable} from 'react-native';
@@ -11,7 +14,7 @@ import styles from './styles';
 const NotificationDetails = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  const {data, totalPage} = useSelector(state => state.notification);
+  const {data, totalPage, isLoading} = useSelector(state => state.notification);
   const user = useSelector(state => state.tokenUser.data);
   const [refreshing, setRefreshing] = useState(false);
   const [page, setPage] = useState(1);
@@ -118,6 +121,14 @@ const NotificationDetails = () => {
     );
   };
 
+  const _renderEmpty = () => (
+    <Empty
+      lottie={lottie.bell}
+      imageStyles={styles.icon}
+      content={'Chưa có thông báo nào'}
+    />
+  );
+
   return (
     <Block flex>
       <Header title="Thông báo" />
@@ -125,16 +136,24 @@ const NotificationDetails = () => {
         <Block flex>
           {/* <HeaderNotification /> */}
 
-          <FlatList
-            renderItem={_renderItem}
-            data={data}
-            removeClippedSubviews={true}
-            onRefresh={_onRefresh}
-            onEndReached={_loadMore}
-            refreshing={refreshing}
-            showsVerticalScrollIndicator={false}
-            keyExtractor={(item, index) => item.item_id}
-          />
+          {isLoading && !data && <NotificationHolder />}
+          {!isLoading && !data?.length ? (
+            _renderEmpty()
+          ) : (
+            <Block flex>
+              <FlatList
+                renderItem={_renderItem}
+                data={data}
+                removeClippedSubviews={true}
+                onRefresh={_onRefresh}
+                onEndReached={_loadMore}
+                refreshing={refreshing}
+                showsVerticalScrollIndicator={false}
+                keyExtractor={(item, index) => item.item_id}
+              />
+              {isLoading && page > 1 && <LoadMore />}
+            </Block>
+          )}
         </Block>
       ) : (
         <Block flex alignCenter justifyCenter>

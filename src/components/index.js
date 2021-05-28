@@ -13,6 +13,8 @@ import Slider from '@components/Slider';
 import Text from '@components/Text';
 import TextInput from '@components/TextInput';
 import WebView from '@components/WebView';
+import Shimmer from '@components/Shimmer';
+import LoadMore from '@components/LoadMore';
 
 export {
   Block,
@@ -30,4 +32,6 @@ export {
   ImagePickerModal,
   ModalBox,
   AnimatedImage,
+  Shimmer,
+  LoadMore,
 };
