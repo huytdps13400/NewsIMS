@@ -7,6 +7,7 @@ import {watchPageByIDSagas} from './PageByIDSaga';
 import {watchTokenSagas} from './TokenSaga';
 import {watchUserSagas} from './UserSaga';
 import {watchNotificationSagas} from './NotificationSaga';
+import {watchSocialLoginSagas} from './SocialLoginSaga';
 
 export default function* rootSaga() {
   yield all([fork(watchTokenSagas)]);
@@ -17,4 +18,5 @@ export default function* rootSaga() {
   yield all([fork(watchAddressSagas)]);
   yield all([fork(watchLocationSagas)]);
   yield all([fork(watchNotificationSagas)]);
+  yield all([fork(watchSocialLoginSagas)]);
 }

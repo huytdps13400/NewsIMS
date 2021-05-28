@@ -18,50 +18,51 @@ const LoginScreen = ({callback}) => {
   const dispatch = useDispatch();
   const {device_token, device_name} = useSelector(state => state.device);
   const {isLoading} = useSelector(state => state.login);
-  // const {data, fetching, handleLoginGoogle} = useSocialLogin();
+  const {data, fetching, handleLoginGoogle, handleLoginFacebook} =
+    useSocialLogin();
 
-  // useEffect(() => {
-  //   try {
-  //     if (data) {
-  //       const {value, type} = data;
-  //       if (value) {
-  //         if (type === 'facebook') {
-  //           dispatch({
-  //             type: actions.LOGIN_FACEBOOK,
-  //             body: {
-  //               info: JSON.stringify(value),
-  //               fbID: value.id,
-  //               device_token,
-  //               device_name,
-  //             },
-  //           });
-  //         } else if (type === 'google') {
-  //           dispatch({
-  //             type: actions.LOGIN_GOOGLE,
-  //             body: {
-  //               info: JSON.stringify({user: value.user}),
-  //               ggID: value.user.id,
-  //               device_token,
-  //               device_name,
-  //             },
-  //           });
-  //         } else if (type === 'apple') {
-  //           dispatch({
-  //             type: actions.LOGIN_APPLE,
-  //             body: {
-  //               info: JSON.stringify(value),
-  //               apID: value.sub,
-  //               device_token,
-  //               device_name,
-  //             },
-  //           });
-  //         }
-  //       }
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }, [data, device_name, device_token, dispatch]);
+  useEffect(() => {
+    try {
+      if (data) {
+        const {value, type} = data;
+        if (value) {
+          if (type === 'facebook') {
+            dispatch({
+              type: actions.LOGIN_FACEBOOK,
+              body: {
+                info: JSON.stringify(value),
+                fbID: value.id,
+                device_token,
+                device_name,
+              },
+            });
+          } else if (type === 'google') {
+            dispatch({
+              type: actions.LOGIN_GOOGLE,
+              body: {
+                info: JSON.stringify({user: value.user}),
+                ggID: value.user.id,
+                device_token,
+                device_name,
+              },
+            });
+          } else if (type === 'apple') {
+            dispatch({
+              type: actions.LOGIN_APPLE,
+              body: {
+                info: JSON.stringify(value),
+                apID: value.sub,
+                device_token,
+                device_name,
+              },
+            });
+          }
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, [data, device_name, device_token, dispatch]);
 
   const _onSubmit = values => {
     Keyboard.dismiss();
@@ -120,13 +121,13 @@ const LoginScreen = ({callback}) => {
               backgroundColor="#3B5998"
               color="white"
               icon={icons.facebook}
-              // onPress={handleLoginFacebook}
+              onPress={handleLoginFacebook}
             />
             <LoginSocialButton
               backgroundColor="#FFFFFF"
               color="black"
               icon={icons.google}
-              // onPress={handleLoginGoogle}
+              onPress={handleLoginGoogle}
             />
             {Platform.OS === 'ios' ? (
               <LoginSocialButton
@@ -148,7 +149,7 @@ const LoginScreen = ({callback}) => {
             </Pressable>
           </Block>
         </Block>
-        {/* {fetching && <Loading />} */}
+        {fetching && <Loading />}
       </Block>
     </Formik>
   );
