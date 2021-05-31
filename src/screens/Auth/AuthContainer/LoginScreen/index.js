@@ -18,8 +18,13 @@ const LoginScreen = ({callback}) => {
   const dispatch = useDispatch();
   const {device_token, device_name} = useSelector(state => state.device);
   const {isLoading} = useSelector(state => state.login);
-  const {data, fetching, handleLoginGoogle, handleLoginFacebook} =
-    useSocialLogin();
+  const {
+    data,
+    fetching,
+    handleLoginGoogle,
+    handleLoginFacebook,
+    handleLoginApple,
+  } = useSocialLogin();
 
   useEffect(() => {
     try {
@@ -134,7 +139,7 @@ const LoginScreen = ({callback}) => {
                 backgroundColor="#000000"
                 color="white"
                 icon={icons.apple}
-                // onPress={handleLoginApple}
+                onPress={handleLoginApple}
               />
             ) : null}
           </Block>

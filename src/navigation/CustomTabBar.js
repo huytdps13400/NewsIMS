@@ -1,6 +1,6 @@
 import {icons} from '@assets';
 import {Block, Text} from '@components';
-import actions from '@redux/actions';
+import actions, {_onUnmount} from '@redux/actions';
 import {theme} from '@theme';
 import {getSize} from '@utils/responsive';
 import React, {memo, useEffect} from 'react';
@@ -43,6 +43,9 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
         },
       });
     }
+    return () => {
+      dispatch({type: _onUnmount(actions.GET_TOTAL_NOTIFICATION)});
+    };
   }, [dispatch, user]);
 
   return (
