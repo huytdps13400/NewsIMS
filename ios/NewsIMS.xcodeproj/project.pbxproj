@@ -15,7 +15,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9345E9A22660B17E00D11181 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9345E9A12660B17E00D11181 /* File.swift */; };
 		9345E9A42660D38D00D11181 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9345E9A32660D38D00D11181 /* GoogleService-Info.plist */; };
-		9345E9A62660D91000D11181 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9345E9A52660D91000D11181 /* GoogleService-Info.plist */; };
+		939BC79926646E4100DB7BC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 939BC79826646E4100DB7BC0 /* GoogleService-Info.plist */; };
 		E1AEA5989C14516C5D5B6D08 /* libPods-NewsIMS-NewsIMSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F63DA19EF81E714404396BD /* libPods-NewsIMS-NewsIMSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +46,7 @@
 		9345E9A02660B17E00D11181 /* NewsIMS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NewsIMS-Bridging-Header.h"; sourceTree = "<group>"; };
 		9345E9A12660B17E00D11181 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		9345E9A32660D38D00D11181 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9345E9A52660D91000D11181 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		939BC79826646E4100DB7BC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		940E92E2EEEE554A38387898 /* Pods-NewsIMS-NewsIMSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsIMS-NewsIMSTests.release.xcconfig"; path = "Target Support Files/Pods-NewsIMS-NewsIMSTests/Pods-NewsIMS-NewsIMSTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4729F4B6C3187F939D7E0F1 /* libPods-NewsIMS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewsIMS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26102D8E99E1030502F4B03 /* Pods-NewsIMS-NewsIMSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsIMS-NewsIMSTests.debug.xcconfig"; path = "Target Support Files/Pods-NewsIMS-NewsIMSTests/Pods-NewsIMS-NewsIMSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		13B07FAE1A68108700A75B9A /* NewsIMS */ = {
 			isa = PBXGroup;
 			children = (
-				9345E9A52660D91000D11181 /* GoogleService-Info.plist */,
+				939BC79826646E4100DB7BC0 /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -255,7 +255,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				9345E9A62660D91000D11181 /* GoogleService-Info.plist in Resources */,
+				939BC79926646E4100DB7BC0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
