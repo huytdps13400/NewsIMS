@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "50964421980",
+    "project_id": "newsims-7a6fa",
+    "storage_bucket": "newsims-7a6fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50964421980:android:de24456cca7a8993713599",
+        "android_client_info": {
+          "package_name": "com.newsims"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50964421980-drm6p3a4d2h4qrtfq84tkl8oqd2uq9i4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.newsims",
+            "certificate_hash": "fafbfbb143c4e5b09029f30bc07d67ac57416629"
+          }
+        },
+        {
+          "client_id": "50964421980-vuoom9527v98cm75cpff09ifegcmrdqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Eovy2mtxmj3qmUVnTwpY0Pndtl4_FaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50964421980-vuoom9527v98cm75cpff09ifegcmrdqs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "50964421980-i4p10u3e49uhvktlnbpqg1slif1t7di1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.imsvietnamese.amazingcoffee"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
