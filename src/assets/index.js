@@ -1,9 +1,14 @@
-export const icons = {
+const icons = {
   home: require('./icons/home.png'),
+  home_selected: require('./icons/home_selected.png'),
   notification: require('./icons/notification.png'),
+  notification_selected: require('./icons/notification_selected.png'),
   profile: require('./icons/profile.png'),
+  profile_selected: require('./icons/profile_selected.png'),
   star: require('./icons/star.png'),
+  star_selected: require('./icons/star_selected.png'),
   tendency: require('./icons/tendency.png'),
+  tendency_selected: require('./icons/tendency_selected.png'),
   logoims: require('./icons/logoims.png'),
   back: require('./icons/back.png'),
   search: require('./icons/iconsearch.png'),
@@ -40,9 +45,16 @@ export const icons = {
   facebook: require('./icons/facebook.png'),
   auth_email: require('./icons/auth_email.png'),
   auth_phone: require('./icons/auth_phone.png'),
+  openPicker: require('./icons/openPicker.png'),
+  openCamera: require('./icons/openCamera.png'),
 };
 
-export const images = {
+const images = {
   discover: require('./images/discover.png'),
   bannerhome: require('./images/bannerhome.png'),
 };
+
+const lottie = {
+  bell: require('./lottie/bell.json'),
+};
+export {icons, lottie, images};

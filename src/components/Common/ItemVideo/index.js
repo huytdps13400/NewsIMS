@@ -5,6 +5,7 @@ import {getSize, width} from '@utils/responsive';
 import React from 'react';
 import {Image, Pressable} from 'react-native';
 import styles from './styles';
+
 const ItemVideo = ({style, title, describe}) => {
   return (
     <Block style={style}>
@@ -22,13 +23,9 @@ const ItemVideo = ({style, title, describe}) => {
             height: getSize.s(36),
           }}
         />
-        <Block
-          absolute
-          bottom={10}
-          width={width - 24}
-          paddingHorizontal={getSize.m(12)}>
+        <Block absolute bottom={10} width={width - 24} paddingHorizontal={12}>
           <Text
-            size={getSize.s(20)}
+            size={20}
             color={theme.colors.white}
             numberOfLines={3}
             fontType="semibold">
@@ -36,8 +33,7 @@ const ItemVideo = ({style, title, describe}) => {
           </Text>
         </Block>
       </Pressable>
-
-      <Text marginTop={getSize.m(14)} size={getSize.s(15)}>
+      <Text marginTop={14} size={15}>
         {describe}
       </Text>
     </Block>

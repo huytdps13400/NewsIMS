@@ -1,6 +1,7 @@
 /* eslint-disable no-lone-blocks */
 import {Platform} from 'react-native';
 import Toast from 'react-native-simple-toast';
+
 export const CustomToast = string => {
   Toast.show(string);
 };

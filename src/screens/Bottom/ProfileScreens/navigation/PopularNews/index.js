@@ -1,15 +1,36 @@
 import {Block, Header} from '@components';
 import ItemNews from '@components/Common/itemNews';
 import actions from '@redux/actions';
-import React, {useEffect} from 'react';
+import {getSize} from '@utils/responsive';
+import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 const PopularNews = () => {
+  const data = useSelector(state => state.news?.data);
   const dispatch = useDispatch();
-  const {data} = useSelector(state => state.news);
+  const [refreshing, setRefreshing] = useState(false);
+  const [, setPage] = useState(1);
 
   useEffect(() => {
+    dispatch({type: actions.GET_NEWS, params: {p: 1, numshow: 12}});
+  }, [dispatch]);
+
+  const _renderItem = ({item}) => (
+    <ItemNews
+      item_id={item.item_id}
+      picture={item.picture}
+      date_update={item.date_update}
+      title={item.title}
+    />
+  );
+
+  const _onRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1000);
+    setPage(1);
     dispatch({
       type: actions.GET_NEWS,
       params: {
@@ -17,24 +38,20 @@ const PopularNews = () => {
         numshow: 12,
       },
     });
-  }, [dispatch]);
-  const _renderItem = ({item}) => (
-    <ItemNews
-      item_id={item.item_id}
-      title={item.title}
-      picture={item.picture}
-      date_update={item.date_update}
-    />
-  );
+  };
+
   return (
-    <Block marginBottom={20} flex>
-      <Header title="Tin đọc nhiều" canGoBack />
-      <Block paddingHorizontal={12} flex>
+    <Block flex marginBottom={getSize.m(20)}>
+      <Header canGoBack title="Tin đọc nhiều" />
+      <Block flex paddingHorizontal={getSize.m(12)}>
         <FlatList
           showsVerticalScrollIndicator={false}
-          renderItem={_renderItem}
+          removeClippedSubviews={true}
           data={data}
+          renderItem={_renderItem}
           keyExtractor={item => item.item_id}
+          refreshing={refreshing}
+          onRefresh={_onRefresh}
         />
       </Block>
     </Block>

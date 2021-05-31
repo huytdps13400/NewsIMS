@@ -140,7 +140,7 @@ const LoginScreen = ({callback}) => {
           <Block row alignCenter justifyCenter paddingBottom={16}>
             <Pressable flexDirection="row" onPress={callback}>
               <Text size={12} fontType="semibold">
-                Bạn chưa có tài khoảng ?{'   '}
+                Bạn chưa có tài khoản ?{'   '}
               </Text>
               <Text size={12} color="blue" fontType="semibold">
                 Đăng ký ngay

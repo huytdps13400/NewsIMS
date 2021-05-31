@@ -35,7 +35,6 @@ const CheckBox = ({
             source={icons.check_box}
           />
         </Pressable>
-
         <PressableAnim
           style={{...styles.btnActivity, opacity}}
           onPress={_onChange}>
@@ -45,7 +44,6 @@ const CheckBox = ({
           />
         </PressableAnim>
       </Block>
-
       <Text style={textStyles} fontType="bold" size={15}>
         {title}
       </Text>

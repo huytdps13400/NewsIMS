@@ -7,7 +7,6 @@ export default StyleSheet.create({
     width: getSize.s(17),
     height: getSize.s(17),
   },
-
   inputWrap: {
     paddingHorizontal: 0,
     borderRadius: 0,
@@ -18,4 +17,5 @@ export default StyleSheet.create({
   container: {
     flex: 1,
   },
+  button: {marginTop: 45, marginBottom: 30},
 });

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {Block, Text} from '@components';
 import React from 'react';
 import {Pressable} from 'react-native';

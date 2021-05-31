@@ -18,6 +18,7 @@ function* getToken() {
     yield put({type: _onSuccess(Actions.GET_TOKEN), data: res.token});
   } catch (error) {
     yield put({type: _onFail(Actions.GET_TOKEN)});
+
     hanldeErrorCode(error);
   }
 }

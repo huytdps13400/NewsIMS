@@ -1,7 +1,6 @@
 import actions, {_onUnmount} from '@redux/actions';
 import {CustomToast} from '@utils/helper';
 import Storage from '@utils/storage';
-
 import {Alert, DevSettings} from 'react-native';
 import store from 'redux/store';
 

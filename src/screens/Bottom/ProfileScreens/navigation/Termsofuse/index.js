@@ -4,7 +4,7 @@ import React from 'react';
 const Termsofuse = () => {
   return (
     <Block flex>
-      <Header title="Điều khoản sử dụng" canGoBack />
+      <Header canGoBack title="Điều khoản sử dụng" />
       <WebView
         data={
           'https://zingnews.vn/tphcm-phat-hien-mot-nguoi-duong-tinh-voi-ncov-post1216683.html'

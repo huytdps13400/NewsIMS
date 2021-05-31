@@ -1,51 +1,71 @@
 import {Block, Text} from '@components';
 import {theme} from '@theme';
-import {getSize, width} from '@utils/responsive';
+import {width} from '@utils/responsive';
 import React from 'react';
-import {Image} from 'react-native';
+import {FlatList, Image} from 'react-native';
 import styles from './styles';
+const DATA = [
+  {
+    title: 'Quyền lực mền của VIệt NAM tăng hạng sau một năm chống COVID19 ',
+    image:
+      'https://nhattientuu.com/wp-content/uploads/2020/08/hinh-anh-dep-1.jpg',
+  },
+  {
+    title: 'Quyền lực mền của VIệt NAM tăng hạng sau một năm chống COVID19 ',
+    image:
+      'https://sundayinwonderland.com/wp-content/uploads/2019/01/Explore_the_unexplored_01.jpg',
+  },
+  {
+    title: 'Quyền lực mền của VIệt NAM tăng hạng sau một năm chống COVID19 ',
+    image:
+      'https://nhattientuu.com/wp-content/uploads/2020/08/hinh-anh-dep-1.jpg',
+  },
+  {
+    title: 'Quyền lực mền của VIệt NAM tăng hạng sau một năm chống COVID19 ',
+    image:
+      'https://sundayinwonderland.com/wp-content/uploads/2019/01/Explore_the_unexplored_01.jpg',
+  },
+  {
+    title: 'Quyền lực mền của VIệt NAM tăng hạng sau một năm chống COVID19 ',
+    image:
+      'https://nhattientuu.com/wp-content/uploads/2020/08/hinh-anh-dep-1.jpg',
+  },
+];
 
 const HighLight = () => {
+  const _renderItem = ({item}) => {
+    return (
+      <Block width={(width - 36) / 2} margin={3}>
+        <Image
+          source={{
+            uri: item.image,
+          }}
+          style={styles.imgstyle}
+        />
+        <Text size={16} numberOfLines={3} marginTop={5}>
+          {item.title}
+        </Text>
+        <Text color={theme.colors.lightGray}>Xã hội</Text>
+      </Block>
+    );
+  };
+
   return (
     <Block>
-      <Text marginTop={15} numberOfLines={2} size={getSize.s(20)}>
-        NTK Đỗ Trịnh Hoài Nam may áo dài cho Xuân Bắc
-      </Text>
-      <Block row marginTop={getSize.m(12)}>
-        <Text size={getSize.s(15)}>Tin nổi bật</Text>
-        <Text
-          size={getSize.s(14)}
-          marginLeft={getSize.m(10)}
-          color={theme.colors.lightGray}>
-          39 phút trước
+      <Block row marginVertical={12}>
+        <Text size={15}>Tin nổi bật</Text>
+        <Text size={14} marginLeft={10} color={theme.colors.lightGray}>
+          .39 phút trước
         </Text>
       </Block>
-      <Block row alignCenter marginTop={getSize.m(25)}>
-        <Block width={(width - 36) / 2}>
-          <Image
-            source={{
-              uri: 'https://sundayinwonderland.com/wp-content/uploads/2019/01/Explore_the_unexplored_01.jpg',
-            }}
-            style={styles.imgstyle}
-          />
-          <Text size={16} numberOfLines={3} marginTop={getSize.m(5)}>
-            'Quyền lực mềm' của Việt Nam tăng hạng sau một năm chống COVID-19
-          </Text>
-          <Text color={theme.colors.lightGray}>Xã hội</Text>
-        </Block>
-        <Block width={(width - 36) / 2} marginLeft={12}>
-          <Image
-            source={{
-              uri: 'https://sundayinwonderland.com/wp-content/uploads/2019/01/Explore_the_unexplored_01.jpg',
-            }}
-            style={styles.imgstyle}
-          />
-          <Text size={16} numberOfLines={3} marginTop={getSize.m(5)}>
-            'Quyền lực mềm' của Việt Nam tăng hạng sau một năm chống COVID-19
-          </Text>
-          <Text color={theme.colors.lightGray}>Xã hội</Text>
-        </Block>
-      </Block>
+
+      <FlatList
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        data={DATA}
+        renderItem={_renderItem}
+        keyExtractor={(_, index) => String(index)}
+      />
     </Block>
   );
 };

@@ -1,5 +1,6 @@
 import {icons} from '@assets';
 import {Block, Text} from '@components';
+import {theme} from '@theme';
 import {width} from '@utils/responsive';
 import React from 'react';
 import {Image} from 'react-native';
@@ -27,8 +28,8 @@ const Slide = React.memo(({data, style}) => {
         index={0}
         renderItem={_renderItem}
         paginationStyleItem={{height: 10, width: 10}}
-        paginationActiveColor={'#0088EE'}
-        paginationDefaultColor={'#fff'}
+        paginationActiveColor={theme.colors.blueHeader}
+        paginationDefaultColor={theme.colors.white}
       />
     </Block>
   );

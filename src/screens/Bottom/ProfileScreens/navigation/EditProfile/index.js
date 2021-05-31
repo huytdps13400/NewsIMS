@@ -5,7 +5,8 @@ import {theme} from '@theme';
 import {width} from '@utils/responsive';
 import moment from 'moment';
 import React, {useState} from 'react';
-import {Image, Keyboard} from 'react-native';
+import {Image, Keyboard, Pressable} from 'react-native';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import {useDispatch, useSelector} from 'react-redux';
 import HeaderProfile from '../../components/HeaderProfile';
 import styles from './styles';
@@ -14,17 +15,25 @@ const DATA = [
   {value: '1', label: 'nữ'},
 ];
 const ProfileDetails = ({route}) => {
-  const {user} = route.params;
-  const tokenUser = useSelector(state => state.tokenUser.data);
   const dispatch = useDispatch();
 
-  const [marital, setMarital] = useState('');
-  const [phone, setPhone] = useState('');
-  const [fullName, setfullName] = useState('');
-  const [email] = useState('');
-  const [gender, setGender] = useState('');
-  const [birthday, setBirthday] = useState('');
-  const [city, setCity] = useState('');
+  const {user} = route.params;
+
+  const tokenUser = useSelector(state => state.tokenUser.data);
+  const [isDatePicker, setIsDatePicker] = useState(false);
+
+  const [phone, setPhone] = useState(user.phone);
+  const [fullName, setfullName] = useState(user.full_name);
+  const [email] = useState(user.email);
+  const [gender, setGender] = useState(user.gender);
+  const [birthday, setBirthday] = useState(user.birthday);
+
+  const [city, setCity] = useState(user.city);
+
+  const _onConfirmDate = date => {
+    setBirthday(date / 1000);
+    setIsDatePicker(false);
+  };
 
   const _onConfirmInfo = () => {
     Keyboard.dismiss();
@@ -47,18 +56,18 @@ const ProfileDetails = ({route}) => {
       <HeaderProfile canGoBack />
 
       <Block
-        shadow
         flex
+        shadow
+        absolute
         justifyCenter
-        paddingHorizontal={30}
+        top={175}
         radius={17}
         width={width - 22}
+        paddingHorizontal={30}
         space={'between'}
-        absolute
-        top={175}
         alignSelf="center"
         backgroundColor="white">
-        <Block row alignCenter space={'between'} marginTop={20}>
+        <Block row alignCenter marginTop={20} space={'between'}>
           <Text size={16} fontType="bold">
             Thông tin hồ sơ của bạn
           </Text>
@@ -67,10 +76,10 @@ const ProfileDetails = ({route}) => {
         <Block
           row
           alignCenter
-          borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
+          paddingTop={30}
           paddingBottom={10}
-          paddingTop={30}>
+          borderBottomWidth={1}
+          borderBottomColor={theme.colors.smoke}>
           <TextInput
             iconLeft={icons.profile7}
             style={styles.inputWrap}
@@ -87,68 +96,70 @@ const ProfileDetails = ({route}) => {
           row
           alignCenter
           borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
           paddingBottom={10}
-          paddingTop={30}>
+          paddingTop={30}
+          borderBottomColor={theme.colors.smoke}>
           <Image
-            source={icons.profile6}
             resizeMode="contain"
+            source={icons.profile6}
             style={styles.imageTitle}
           />
           <Text marginLeft={5}>Giới tính</Text>
-          <RadioButton
-            itemStyle={styles.radioBtn}
-            data={DATA}
-            selected={gender}
-            setSelected={setGender}
-          />
+          <RadioButton data={DATA} selected={gender} setSelected={setGender} />
         </Block>
+
+        <Pressable
+          flexDirection="row"
+          alignCenter
+          borderBottomWidth={1}
+          paddingBottom={10}
+          paddingTop={30}
+          borderBottomColor={theme.colors.smoke}
+          onPress={() => setIsDatePicker(true)}>
+          <Image
+            source={icons.profile7}
+            resizeMode="contain"
+            style={styles.imageTitle}
+          />
+          <Text marginLeft={5}>Ngày sinh</Text>
+
+          <Text color="placeholder" marginLeft={5}>
+            {birthday
+              ? moment(birthday * 1000).format('DD/MM/YYYY')
+              : 'Chưa cập nhật'}
+          </Text>
+        </Pressable>
+
+        {/* <Pressable
+          flexDirection="row"
+          alignCenter
+          borderBottomWidth={1}
+          paddingBottom={10}
+          paddingTop={30}
+          onPress={() =>
+            navigation.navigate(routes.ADDRESS_DETAILS, {
+              city: city,
+              setCity: setCity,
+            })
+          }>
+          <Image
+            source={icons.profile8}
+            resizeMode="contain"
+            style={styles.imageTitle}
+          />
+          <Text marginLeft={5}>Thành phố:</Text>
+          <Text color="placeholder" marginLeft={5}>
+            {city ? city : 'Chưa cập nhật'}
+          </Text>
+        </Pressable> */}
 
         <Block
           row
           alignCenter
           borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
           paddingBottom={10}
-          paddingTop={30}>
-          <TextInput
-            iconLeft={icons.profile7}
-            style={styles.inputWrap}
-            inputStyle={styles.input}
-            containerStyle={styles.container}
-            testLeft={'Ngày sinh: '}
-            placeholder={moment(user.birthday * 1000).format('DD/MM/YYYY')}
-            keyboardType="phone-pad"
-            value={birthday}
-            onChangeText={text => setBirthday(text)}
-          />
-        </Block>
-        <Block
-          row
-          alignCenter
-          borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
-          paddingBottom={10}
-          paddingTop={30}>
-          <TextInput
-            iconLeft={icons.profile8}
-            style={styles.inputWrap}
-            inputStyle={styles.input}
-            containerStyle={styles.container}
-            testLeft={'Thành phố:  '}
-            placeholder={user.address ? user.address : 'Chưa cập nhật'}
-            keyboardType="phone-pad"
-            value={city}
-            onChangeText={text => setCity(text)}
-          />
-        </Block>
-        <Block
-          row
-          alignCenter
-          borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
-          paddingBottom={10}
-          paddingTop={30}>
+          paddingTop={30}
+          borderBottomColor={theme.colors.smoke}>
           <TextInput
             iconLeft={icons.phone}
             style={styles.inputWrap}
@@ -161,32 +172,21 @@ const ProfileDetails = ({route}) => {
             onChangeText={text => setPhone(text)}
           />
         </Block>
-        <Block
-          row
-          alignCenter
-          borderBottomWidth={1}
-          borderBottomColor={theme.colors.smoke}
-          paddingBottom={10}
-          paddingTop={30}>
-          <TextInput
-            iconLeft={icons.profile10}
-            style={styles.inputWrap}
-            inputStyle={styles.input}
-            containerStyle={styles.container}
-            testLeft={'Tình trạng hôn nhân '}
-            placeholder={'Độc thân'}
-            keyboardType="phone-pad"
-            value={marital}
-            onChangeText={text => setMarital(text)}
-          />
-        </Block>
 
         <Button
           onPress={() => _onConfirmInfo()}
-          style={{marginTop: 45, marginBottom: 30}}
+          style={styles.button}
           title={'Cập nhật tài khoản'}
         />
       </Block>
+      <DateTimePickerModal
+        mode="date"
+        locale="vi_VN"
+        headerTextIOS={'Ngày sinh'}
+        isVisible={isDatePicker}
+        onConfirm={_onConfirmDate}
+        onCancel={() => setIsDatePicker(false)}
+      />
     </Block>
   );
 };

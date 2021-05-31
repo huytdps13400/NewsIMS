@@ -12,13 +12,17 @@ const NewsDetails = ({route}) => {
   useEffect(() => {
     dispatch({
       type: actions.GET_NEWSDETAILS,
-      params: {item_id: item_id, p: 1, numshow: 12},
+      params: {
+        item_id: item_id,
+        p: 1,
+        numshow: 12,
+      },
     });
   }, [dispatch, item_id]);
 
   return (
     <Block flex backgroundColor="white">
-      <Header title="Chi tiết tin tức" canGoBack />
+      <Header canGoBack title="Chi tiết tin tức" />
       <WebView style={{padding: getSize.m(12)}} data={data?.content} />
     </Block>
   );
